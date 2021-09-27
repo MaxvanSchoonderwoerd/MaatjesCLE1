@@ -43,18 +43,25 @@ html {
 }
 
 .listItem {
-    padding: 2rem 0.25rem 2rem 0.25rem;
-    padding-right: 1rem;
+    position: relative;
+    padding: 2rem 1.25rem 2rem 0.25rem;
     text-decoration: none;
     color: white;
+<<<<<<< HEAD
     padding: auto;
     padding-right: 1rem;
-
+=======
 }
+>>>>>>> f520748cc23c4e24b0965b7b10ec161475cc105c
+
+.underline {
+    margin-top: 3px;
+    border-bottom: 3px solid white;
+}
+
 
 .listItem:first-of-type {
     margin-right: auto;
     padding: 0;
     margin-left: 1rem;
-
 }
