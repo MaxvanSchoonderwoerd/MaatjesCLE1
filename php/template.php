@@ -17,4 +17,16 @@ EOT;
 
 function template_header($page) {
 //    header goes here
+    echo <<<EOT
+<!doctype html>
+<html lang="en">
+<body>
+    <header>
+        <div class="header">
+            <h1>Maatjes</h1>
+            <h2>Login</h2>
+        </div>
+    </header>
+</body>
+EOT;
 }
