@@ -20,7 +20,7 @@ function template_header($page) {
     echo <<<EOT
     <header>
     <div class="header">
-        <a href="index.php" class="listItem"><img class="logo listItem" src="https://i.pravatar.cc/125/" alt="Maatjes"></a>
+        <a href="index.php" class="listItem"><img class="logo" src="https://i.pravatar.cc/125/" alt="Maatjes"></a>
         <a href="upload.php" class="listItem">Upload</a>
         <a href="profile.php" class="listItem">Profiel</a>
         <a href="login.php" class="listItem">Login</a>
