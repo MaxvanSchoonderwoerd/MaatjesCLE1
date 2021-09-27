@@ -47,7 +47,7 @@ html {
 .header{
     display: flex;
     justify-content: flex-start;
-    background-color: #50f545;
+    background-color: #264653;
     align-items: center;
 }
 
