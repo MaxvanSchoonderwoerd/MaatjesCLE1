@@ -29,15 +29,6 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
-/*index.php*/
-.informatie {
-
-}
-
-.upload {
-
-}
-
 /*template.php*/
 .logo {
     width: 80px;
@@ -56,6 +47,8 @@ html {
     padding-right: 1rem;
     text-decoration: none;
     color: white;
+    padding: auto;
+    padding-right: 1rem;
 }
 
 .listItem:first-of-type {
