@@ -29,7 +29,6 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
-/*template.php*/
 .logo {
     width: 80px;
     height: 80px;
@@ -47,16 +46,6 @@ html {
     padding: 2rem 1.25rem 2rem 0.25rem;
     text-decoration: none;
     color: white;
-<<<<<<< HEAD
-    padding: auto;
-    padding-right: 1rem;
-=======
-}
->>>>>>> f520748cc23c4e24b0965b7b10ec161475cc105c
-
-.underline {
-    margin-top: 3px;
-    border-bottom: 3px solid white;
 }
 
 
