@@ -43,14 +43,18 @@ html {
 }
 
 .listItem {
-    padding: 0.25rem;
+    padding: 2rem 0.25rem 2rem 0.25rem;
     padding-right: 1rem;
     text-decoration: none;
     color: white;
     padding: auto;
     padding-right: 1rem;
+
 }
 
 .listItem:first-of-type {
     margin-right: auto;
+    padding: 0;
+    margin-left: 1rem;
+
 }

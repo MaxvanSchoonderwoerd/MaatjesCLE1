@@ -10,7 +10,7 @@ include 'template.php';
 <?= template_header("Home") ?>
 
 <main>
-
+    <h1>Wat doen wij?</h2>
 </main>
 </body>
 </html>

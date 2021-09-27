@@ -3,11 +3,11 @@ include 'template.php';
 
 ?>
 
-<?= template_head("upload je klus") ?>
+<?= template_head("Upload") ?>
 
 <body>
 
-<?= template_header("Upload je klus") ?>
+<?= template_header("Upload") ?>
 
 <main>
     <h1>Op deze pagina kan je een klusje maken</h1>

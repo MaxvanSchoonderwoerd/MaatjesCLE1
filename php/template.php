@@ -20,11 +20,11 @@ function template_header($page) {
     echo <<<EOT
     <header>
     <div class="header">
-        <a href="#" class="listItem"><img class="logo" src="https://i.pravatar.cc/125/" alt="Maatjes"></a>
-        <a href="#" class="listItem">Upload</a>
-        <a href="#" class="listItem">Profiel</a>
-        <a href="#" class="listItem">Login</a>
-        <a href="#" class="listItem">Uitloggen</a>
+        <a href="index.php" class="listItem"><img class="logo" src="https://i.pravatar.cc/125/" alt="Maatjes"></a>
+        <a href="upload.php" class="listItem">Upload</a>
+        <a href="profile.php" class="listItem">Profiel</a>
+        <a href="login.php" class="listItem">Login</a>
+        <a href="logout.php" class="listItem">Uitloggen</a>
     </div>
 </header>
 EOT;
