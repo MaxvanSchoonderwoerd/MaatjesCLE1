@@ -18,6 +18,11 @@ EOT;
 
 function template_header($page)
 {
+    if ($page == "Home") {
+        $home = "underline";
+    } else {
+        $home = "";
+    }
     if ($page == "Upload") {
         $upload = "underline";
     } else {
@@ -45,10 +50,11 @@ function template_header($page)
     <header>
     <div class="header">
         <a href="index.php" class="listItem"><img class="logo" src="https://i.pravatar.cc/125/" alt="Maatjes"></a>
-        <a href="upload.php" class="listItem">Upload <div class="$upload"></div></a>
-        <a href="profile.php" class="listItem ">Profiel <div class="$profile"></div></a>
-        <a href="login.php" class="listItem ">Login <div class="$login"></div></a>
-        <a href="logout.php" class="listItem ">Uitloggen <div class="$logout"></div></a>
+        <a href="index.php" class="listItem">Home<div class="$home"></div></a>
+        <a href="upload.php" class="listItem">Upload<div class="$upload"></div></a>
+        <a href="profile.php" class="listItem ">Profiel<div class="$profile"></div></a>
+        <a href="login.php" class="listItem ">Login<div class="$login"></div></a>
+        <a href="logout.php" class="listItem ">Uitloggen<div class="$logout"></div></a>
     </div>
 </header>
 EOT;
