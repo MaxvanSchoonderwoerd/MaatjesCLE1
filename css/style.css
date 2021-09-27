@@ -30,34 +30,34 @@ html {
 }
 
 /*index.php*/
-.informatie { 
+.informatie {
 
 }
 
-.upload{
+.upload {
 
 }
 
 /*template.php*/
-.logo{
+.logo {
     width: 80px;
     height: 80px;
 }
 
-.header{
+.header {
     display: flex;
     justify-content: flex-start;
     background-color: #264653;
     align-items: center;
 }
 
-.listItem{
+.listItem {
     padding: 0.25rem;
     padding-right: 1rem;
     text-decoration: none;
     color: white;
 }
 
-.listItem:first-of-type{
+.listItem:first-of-type {
     margin-right: auto;
 }
