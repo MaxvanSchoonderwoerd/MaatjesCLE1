@@ -17,5 +17,15 @@ EOT;
 
 function template_header($page) {
 //    header goes here
-
+    echo <<<EOT
+    <header>
+    <div class="header">
+        <a href="#" class="listItem"><img class="logo listItem" src="https://i.pravatar.cc/125/" alt="Maatjes"></a>
+        <a href="#" class="listItem">Upload</a>
+        <a href="#" class="listItem">Profiel</a>
+        <a href="#" class="listItem">Login</a>
+        <a href="#" class="listItem">Uitloggen</a>
+    </div>
+</header>
+EOT;
 }
