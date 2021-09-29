@@ -10,7 +10,7 @@
 :root {
     /*colors*/
     --clr_primary: #0290ef;
-    --clr_secondary: #50f545;
+    --clr_secondary: #2A9D8F;
     /*sizes*/
     --txt_xs: 0.75rem;
     --txt_s: 1rem;
@@ -55,6 +55,12 @@ html {
 .underline {
     margin-top: 3px;
     border-bottom: 3px solid white;
+}
+
+.infoSection {
+    background: var(--clr_secondary);
+    display: flex;
+    justify-content: center;
 }
 
 .infoContainer {
