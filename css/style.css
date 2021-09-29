@@ -11,10 +11,10 @@
 :root {
     /*colors*/
 
-    --clr_primary: #E76F51;
-    --clr_secondary: #2A9D8F;
-    --clr_third: #264653;
-    --clr_fourth: #e9c46a;
+    --clr_primary: #fdf0d5;
+    --clr_secondary: #669bbc;
+    --clr_third: #003049;
+    --clr_fourth: #fdf0d5;
     --clr_fifth: #F4A261;
     /*sizes*/
     --txt_xs: 0.75rem;
@@ -112,7 +112,7 @@ html {
 
 .uploadButton {
     text-decoration: none;
-    background-color: white;
+    background-color: var(--clr_secondary);
     color: var(--clr_primary);
     font-size: 4rem;
     padding: 1rem 2rem;
@@ -182,7 +182,7 @@ html {
 
 
 .loginButton {
-    background: var(--clr_primary);
+    background: var(--clr_secondary);
     border-radius: 10px;
 }
 
