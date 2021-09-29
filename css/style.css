@@ -9,7 +9,7 @@
 
 :root {
     /*colors*/
-    --clr_primary: #0290ef;
+    --clr_primary: #E76F51;
     --clr_secondary: #2A9D8F;
     /*sizes*/
     --txt_xs: 0.75rem;
@@ -81,6 +81,7 @@ html {
 }
 
 .btnImgSection {
+    background-color: var(--clr_primary);
     display: flex;
     justify-content: center;
 }
@@ -106,8 +107,8 @@ html {
 
 .uploadButton {
     text-decoration: none;
-    background-color: #E76F51;
-    color: white;
+    background-color: white;
+    color: var(--clr_primary);
     font-size: 4rem;
     padding: 1rem 2rem;
     border-radius: 1rem 4rem;
@@ -125,6 +126,7 @@ html {
 }
 
 .loginSection {
+    background-color: #E76F51;
     display: flex;
     justify-content: center;
 }
@@ -135,24 +137,47 @@ html {
     grid-template-rows: 1fr;
     grid-auto-flow: row;
     grid-template-areas: "loginContainer registerContainer";
-    padding: 1.5rem 0 1.5rem 0;
-    place-items: center;
+    padding: 5rem 0 5rem 0;
+    place-items: self-start;
+    justify-items: center;
     min-width: 80vw;
 }
 
 .loginContainer {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    box-shadow: var(--shdw_primary);
+}
+
+.registerContainer {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: var(--shdw_primary);
 }
 
 .loginInput {
     background: var(--clr_secondary);
     padding: 1rem;
+    border-radius: 10px;
 }
 
+.loginInput::placeholder {
+    color: white;
+}
+
+
 .loginButton {
-    background: var(--clr_secondary);
+    background: var(--clr_primary);
+    border-radius: 10px;
 }
 
 .nameContainer {
@@ -179,12 +204,6 @@ html {
 .surname {
     margin-left: 0.5rem;
     padding: 1rem;
-}
-
-.registerContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .input {
