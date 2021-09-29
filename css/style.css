@@ -150,6 +150,7 @@ html {
 
 .loginInput {
     background: var(--clr_secondary);
+    padding: 1rem;
 }
 
 .loginButton {
@@ -169,14 +170,17 @@ html {
     background: var(--clr_secondary);
     color: white;
     border: none;
+    padding: 1rem;
 }
 
 .name {
     margin-right: 0.5rem;
+    padding: 1rem;
 }
 
 .surname {
     margin-left: 0.5rem;
+    padding: 1rem;
 
 }
 
