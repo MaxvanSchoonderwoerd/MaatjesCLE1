@@ -133,11 +133,13 @@ html {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    gap: 0 10vw;
     grid-auto-flow: row;
     grid-template-areas: "loginContainer registerContainer";
-    width: 80vw;
+    /*width: 80vw;*/
     padding: 1.5rem 0 1.5rem 0;
+    place-items: center;
+
+    min-width: 80vw;
 }
 
 .loginContainer {
@@ -154,15 +156,28 @@ html {
     align-items: center;
 }
 
+.nameContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.nameInput {
+    width: 5rem;
+    height: 2rem;
+}
+
 .loginInput {
-    margin-bottom: 1rem;
-    max-width: 25vw;
 }
 
-.loginButton{
-    max-width: 25vw;
+.input {
+    width: 10rem;
+    height: 2rem;
 }
 
-.nameContainer{
-    max-width: 25vw;
+
+/*for screens with a screen size of 600px or lower*/
+@media only screen and (max-width: 600px) {
+    .loginRegisterContainer {
+        min-width: 100vw;
+    }
 }
