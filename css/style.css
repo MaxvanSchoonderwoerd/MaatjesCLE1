@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -7,18 +6,17 @@
 }
 
 /*variables go here*/
+
 :root {
     /*colors*/
     --clr_primary: #0290ef;
     --clr_secondary: #50f545;
-
     /*sizes*/
     --txt_xs: 0.75rem;
     --txt_s: 1rem;
     --txt_m: 2.5rem;
     --txt_xl: 4rem;
     --txt_xxl: 6rem;
-
     /*shadows*/
     --shdw_primary: -1rem 1rem 1rem rgba(0, 0, 0, 0.15);
     --shdw_secondary: -0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
@@ -48,9 +46,123 @@ html {
     color: white;
 }
 
-
 .listItem:first-of-type {
     margin-right: auto;
     padding: 0;
     margin-left: 1rem;
+}
+
+.underline {
+    margin-top: 3px;
+    border-bottom: 3px solid white;
+}
+
+.infoSection {
+    background-color: #2A9D8F;
+    display: flex;
+    justify-content: center;
+}
+
+.infoContainer {
+    max-width: 80vw;
+    color: white;
+}
+
+.infoTitle {
+    padding-top: 1.5rem
+}
+
+.infoBody {
+    padding-top: 1.5rem
+}
+
+.infoBody:last-of-type {
+    padding: 1.5rem 0 1.5rem 0;
+}
+
+.btnImgSection {
+    display: flex;
+    justify-content: center;
+}
+
+.btnImgContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "uploadButtonContainer pictureHome";
+    max-width: 80vw;
+    padding: 1.5rem 0 1.5rem 0;
+    /* min-height: 50rem; */
+}
+
+.uploadButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 40vw;
+}
+
+.uploadButton {
+    text-decoration: none;
+    background-color: #E76F51;
+    color: white;
+    font-size: 4rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem 4rem;
+}
+
+.pictureHome {
+    object-fit: contain;
+    max-width: 40vw;
+}
+
+.infoImg {
+    object-fit: contain;
+    display: block;
+    max-width: 100%;
+}
+
+.loginSection {
+    display: flex;
+    justify-content: center;
+}
+
+.loginRegisterContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0 10vw;
+    grid-auto-flow: row;
+    grid-template-areas: "loginContainer registerContainer";
+    width: 80vw;
+    padding: 1.5rem 0 1.5rem 0;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginInput {
+    margin-bottom: 1rem;
+    max-width: 25vw;
+}
+
+.loginButton{
+    max-width: 25vw;
+}
+
+.nameContainer{
+    max-width: 25vw;
 }

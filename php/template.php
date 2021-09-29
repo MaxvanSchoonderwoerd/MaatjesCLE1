@@ -40,7 +40,7 @@ function template_header($page)
     }
 
 
-//    header goes here
+    //    header goes here
     echo <<<EOT
     <header>
     <div class="header">
