@@ -13,8 +13,8 @@ include 'template.php';
         <section class="loginSection">
             <div class="loginRegisterContainer">
                 <form class="loginContainer" method="post">
-                    <input class="input loginInput" type="text" id="fname" name="fname" value="username">
-                    <input class="input loginInput" type="text" id="lname" name="lname" value="password">
+                    <input class="input loginInput" type="text" id="fname" name="fname" placeholder="username">
+                    <input class="input loginInput" type="password" id="lname" name="lname" value="password">
                     <input class="input loginButton" type="submit" value="Login">
                 </form>
                 <form class="registerContainer " method="post">
