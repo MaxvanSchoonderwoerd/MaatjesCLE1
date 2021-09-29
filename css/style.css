@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -135,10 +136,8 @@ html {
     grid-template-rows: 1fr;
     grid-auto-flow: row;
     grid-template-areas: "loginContainer registerContainer";
-    /*width: 80vw;*/
     padding: 1.5rem 0 1.5rem 0;
     place-items: center;
-
     min-width: 80vw;
 }
 
@@ -146,38 +145,73 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+}
+
+
+.loginInput {
+    background: var(--clr_secondary);
+}
+
+.loginButton {
+    background: var(--clr_secondary);
+}
+
+.nameContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30vw;
+}
+
+.nameInput {
+    width: 50%;
+    height: 2rem;
+    background: var(--clr_secondary);
+    color: white;
+    border: none;
+}
+
+.name {
+    margin-right: 0.5rem;
+}
+
+.surname {
+    margin-left: 0.5rem;
+
 }
 
 .registerContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
-
-.nameContainer {
-    display: flex;
-    flex-direction: row;
-}
-
-.nameInput {
-    width: 5rem;
-    height: 2rem;
-}
-
-.loginInput {
 }
 
 .input {
-    width: 10rem;
+    width: 30vw;
     height: 2rem;
+    margin: 0.5rem;
+    color: white;
+    border: none;
 }
 
 
 /*for screens with a screen size of 600px or lower*/
 @media only screen and (max-width: 600px) {
     .loginRegisterContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-auto-flow: row;
+        grid-template-areas:
+                "loginContainer"
+                "registerContainer";
+        padding: 1.5rem 0 1.5rem 0;
+        place-items: center;
         min-width: 100vw;
     }
+
+    .input {
+        width: 80vw;
+    }
+
 }
