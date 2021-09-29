@@ -82,6 +82,7 @@ html {
 }
 
 .btnImgSection {
+    background-color: var(--clr_primary);
     display: flex;
     justify-content: center;
 }
@@ -107,8 +108,8 @@ html {
 
 .uploadButton {
     text-decoration: none;
-    background-color: #E76F51;
-    color: white;
+    background-color: white;
+    color: var(--clr_primary);
     font-size: 4rem;
     padding: 1rem 2rem;
     border-radius: 1rem 4rem;
