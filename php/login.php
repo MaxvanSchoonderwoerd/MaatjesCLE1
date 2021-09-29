@@ -19,8 +19,8 @@ include 'template.php';
                 </form>
                 <form class="registerContainer " method="post">
                     <div class="input nameContainer">
-                        <input class="loginInput nameInput" type="text" id="fname" name="fname" value="Naam">
-                        <input class="loginInput nameInput" type="text" id="lname" name="lname" value="Achternaam">
+                        <input class="loginInput nameInput name" type="text" id="fname" name="fname" value="Naam">
+                        <input class="loginInput nameInput surname" type="text" id="lname" name="lname" value="Achternaam">
                     </div>
                     <input class="input loginInput" type="text" id="lname" name="lname" value="niks">
                     <input class="input loginInput" type="text" id="lname" name="lname" value="niks">
