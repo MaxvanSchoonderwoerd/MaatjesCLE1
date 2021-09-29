@@ -57,12 +57,6 @@ html {
     border-bottom: 3px solid white;
 }
 
-.infoSection {
-    background-color: #2A9D8F;
-    display: flex;
-    justify-content: center;
-}
-
 .infoContainer {
     max-width: 80vw;
     color: white;
