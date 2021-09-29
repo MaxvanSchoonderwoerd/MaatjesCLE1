@@ -166,3 +166,10 @@ html {
 .nameContainer{
     max-width: 25vw;
 }
+
+.jobInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
