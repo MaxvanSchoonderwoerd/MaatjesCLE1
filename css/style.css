@@ -10,11 +10,11 @@
 :root {
     /*colors*/
 
-    --clr_primary: #E76F51;
-    --clr_secondary: #2A9D8F;
-    --clr_third: #264653;
-    --clr_fourth: #e9c46a;
-    --clr_fifth: #F4A261;
+    --clr_primary: #FDF0D5;
+    --clr_secondary: #669BBC;
+    --clr_third: #003049;
+    --clr_fourth: #;
+    --clr_fifth: #669BBC;
     /*sizes*/
     --txt_xs: 0.75rem;
     --txt_s: 1rem;
