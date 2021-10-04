@@ -32,34 +32,42 @@ include 'database.php';
             <img class="pictureHome" src="https://source.unsplash.com/random/1920x1080" alt="Maatjes">
         </div>
     </section>
-    <sectoon class="jobSection">
+    <section class="jobSection">
         <div class="jobContainer">
             <?php
-            $result = mysqli_query($db, "SELECT * FROM jobs");
-            while ($row = mysqli_fetch_array($result)) {
+            $jobResult = mysqli_query($db, "SELECT * FROM jobs");
+            $userResult = mysqli_query($db, "SELECT * FROM users");
+            $i = 0;
+            while ($userRow = mysqli_fetch_array($userResult)) {
+                $name = $userRow['first_name'];
+                $tel = $userRow['tel'];
 
-                for ($i = 0; $i <= 9; $i++) {
-                    $x = $i % 4;
-                    switch ($x) {
-                        case 0:
-                            $color = "blue";
-                            break;
-                        case 1:
-                            $color = "green";
-                            break;
-                        case 2:
-                            $color = "red";
-                            break;
-                        case 3:
-                            $color = "purple";
-                            break;
-                    }
-                    jobGenerator("$color", "$title", "$description", "$name", "$city", "$tel");
+            }
+            while ($jobRow = mysqli_fetch_array($jobResult)) {
+                $title = $jobRow['title'];
+                $description = $jobRow['description'];
+                $city = $jobRow['city'];
+                $i++;
+                $x = $i % 4;
+                switch ($x) {
+                    case 0:
+                        $color = "blue";
+                        break;
+                    case 1:
+                        $color = "green";
+                        break;
+                    case 2:
+                        $color = "red";
+                        break;
+                    case 3:
+                        $color = "purple";
+                        break;
                 }
+                jobGenerator("$color", "$title", "$description", "$name", "$city", "$tel");
             }
             ?>
         </div>
-    </sectoon>
+    </section>
 </main>
 </body>
 
