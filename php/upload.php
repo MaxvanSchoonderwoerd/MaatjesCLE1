@@ -26,7 +26,7 @@ include 'template.php';
             <form action="" class="loginContainer loginContainerMargin">
             <h1>Plaats een klus</h1>
             <input class="input loginInput" type="text" id="fname" name="fname" placeholder="Titel">
-            <input class="input loginInput overview" type="text" id="fname" name="fname" placeholder="Omschrijving">
+            <textarea class="input loginInput textarea" type="text" id="fname" name="fname" placeholder="Omschrijving"></textarea>
             <input class="input loginInput" type="text" id="fname" name="fname" placeholder="plaats">
             <input class="input loginButton" type="submit" value="Plaats jou klus">
             </form>
