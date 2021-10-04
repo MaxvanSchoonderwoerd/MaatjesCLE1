@@ -215,11 +215,15 @@ html {
 }
 
 .input {
-    width: 30vw;
+    width: 80vw;
     height: 2rem;
     margin: 0.5rem;
     color: white;
     border: none;
+}
+
+.overview{
+
 }
 
 /*for screens with a screen size of 600px or lower*/
@@ -234,9 +238,6 @@ html {
         padding: 1.5rem 0 1.5rem 0;
         place-items: center;
         min-width: 100vw;
-    }
-    .input {
-        width: 80vw;
     }
 
     .uploadButton {
