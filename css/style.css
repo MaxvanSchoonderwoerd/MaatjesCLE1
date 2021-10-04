@@ -242,7 +242,7 @@ header {
     color: white;
 }
 
-.blueDark {
+.darkblue {
     background-color: var(--clr_third);
     color: var(--clr_secondary);
 }
@@ -252,7 +252,7 @@ header {
     color: white;
 }
 
-.greenDark {
+.darkgreen {
     background-color: var(--clr_darkGreen);
     color: var(--clr_green);
 }
@@ -263,7 +263,7 @@ header {
     color: white;
 }
 
-.redDark {
+.darkred {
     background-color: var(--clr_darkRed);
     color: var(--clr_red);
 }
@@ -273,7 +273,7 @@ header {
     color: white;
 }
 
-.purpleDark {
+.darkpurple {
     background-color: var(--clr_darkPurple);
     color: var(--clr_purple);
 }
