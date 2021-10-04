@@ -33,7 +33,7 @@ include 'template.php';
                     <input class="input loginButton" type="submit" value="Login">
                 </form>
                 <form class="registerContainer " method="post">
-                    <h2>Nog geen account?</h2>
+                    <h2>Nog geen account?   </h2>
                     <div class="input nameContainer">
                         <input class="loginInput nameInput name" type="text" id="fname" name="fname" placeholder="Name">
                         <input class="loginInput nameInput surname" type="text" id="lname" name="lname" placeholder="Achternaam">
