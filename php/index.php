@@ -37,20 +37,19 @@ include 'database.php';
             <?php
             $jobResult = mysqli_query($db, "SELECT * FROM jobs");
             $userResult = mysqli_query($db, "SELECT * FROM users");
-            $i = 0;
+
             while ($userRow = mysqli_fetch_array($userResult)) {
                 $name = $userRow['first_name'];
                 $tel = $userRow['tel'];
-
             }
+
             while ($jobRow = mysqli_fetch_array($jobResult)) {
                 $title = $jobRow['title'];
                 $description = $jobRow['description'];
                 $city = $jobRow['city'];
-                $i++;
-                $x = $i % 4;
-                switch ($x) {
-                    case 0:
+                switch ($jobRow['job_id'] % 4) {
+                    case
+                    0:
                         $color = "blue";
                         break;
                     case 1:

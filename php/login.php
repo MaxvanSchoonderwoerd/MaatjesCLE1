@@ -1,5 +1,76 @@
 <?php
 include 'template.php';
+include 'database.php';
+
+//##########
+//login
+//##########
+function redirect($url, $statusCode = 303)
+{
+    header('Location: ' . $url, true, $statusCode);
+    die();
+}
+if (!empty($_POST)) {
+
+    if (isset($_POST['loginEmail']) && isset($_POST['loginPassword'])) {
+
+        if (isset($db)) {
+
+            //get the name from the input of the user
+            $email = mysqli_escape_string($db, $_POST['loginEmail']);
+
+            //get the password from the input of the user
+            $password = mysqli_escape_string($db, $_POST['loginPassword']);
+
+            //look through the database for the user's inputted "email" and get its corresponding hashed password
+            $sql = "SELECT password FROM users WHERE email = '$email'";
+
+            $result = $db->query($sql);
+            $hash = $result->fetch_assoc();
+
+            //check if the user's inputted password matches the hashed password from the database
+            $valid = password_verify($password, $hash['password']);
+
+            //if it matches
+            if ($valid == true) {
+                echo "logged in";
+//                //start the session
+//                session_start();
+//                $_SESSION["loggedIn"] = true;
+//                $_SESSION["email"] = $_POST['email'];
+
+                //clear the post
+                $_POST = null;
+
+                //send to home.php
+                redirect("index.php");
+
+            }
+        }
+    }
+}
+
+
+//##########
+//register
+//##########
+if (isset($db)) {
+    if (!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['email']) && !empty($_POST['tel']) && !empty($_POST['password'])) {
+
+        $firstname = mysqli_escape_string($db, $_POST['firstname']);
+        $lastname = mysqli_escape_string($db, $_POST['lastname']);
+        $email = mysqli_escape_string($db, $_POST['email']);
+        $tel = mysqli_escape_string($db, $_POST['tel']);
+        $password = mysqli_escape_string($db, $_POST['password']);
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `email`, `tel`) VALUES (NULL, '$firstname', '$lastname', '$hash', '$email', '$tel')";
+
+        if (mysqli_query($db, $sql) == false) {
+            throw new \Exception();
+        }
+    }
+}
 
 ?>
 
@@ -12,7 +83,7 @@ include 'template.php';
 <main>
     <section class="infoSection">
         <div class="infoContainer">
-            <h1 class="infoTitle">Login om hulp te krijgen.</h1>
+            <h1 class="infoTitle">Login om een klus te uploaden.</h1>
             <p class="infoBody">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam,
@@ -28,21 +99,22 @@ include 'template.php';
 
             <form class="loginContainer" method="post">
                 <h2>Login</h2>
-                <input class="input loginInput" type="text" id="fname" name="fname" placeholder="Username">
-                <input class="input loginInput" type="password" id="lname" name="lname" placeholder="Password">
-                <input class="input loginButton" type="submit" value="Login">
+                <input class="input loginInput" type="email" id="loginEmail" name="loginEmail" placeholder="Email">
+                <input class="input loginInput" type="password" id="loginPassword" name="loginPassword" placeholder="Password">
+                <button class="input loginButton" type="submit" >Login</button>
             </form>
             <form class="registerContainer " method="post">
                 <h2>Nog geen account? </h2>
                 <div class="input nameContainer">
-                    <input class="loginInput nameInput name" type="text" id="fname" name="fname" placeholder="Name">
-                    <input class="loginInput nameInput surname" type="text" id="lname" name="lname"
+                    <input class="loginInput nameInput name" type="text" id="firstname" name="firstname"
+                           placeholder="Name">
+                    <input class="loginInput nameInput surname" type="text" id="lastname" name="lastname"
                            placeholder="Achternaam">
                 </div>
-                <input class="input loginInput" type="email" id="lname" name="lname" placeholder="Email">
-                <input class="input loginInput" type="tel" id="lname" name="lname" placeholder="Telefoon Nummer">
-                <input class="input loginInput" type="password" id="lname" name="lname" placeholder="Password">
-                <input class="input loginButton" type="submit" value="Registreren">
+                <input class="input loginInput" type="email" id="email" name="email" placeholder="Email">
+                <input class="input loginInput" type="tel" id="tel" name="tel" placeholder="Telefoon Nummer">
+                <input class="input loginInput" type="password" id="password" name="password" placeholder="Password">
+                <button class="input loginButton" type="submit">Registreren</button>
             </form>
         </div>
     </section>
