@@ -152,7 +152,7 @@ header {
     text-decoration: none;
     background-color: #c1121f;
     color: var(--clr_primary);
-    font-size: 4rem;
+    font-size: clamp(1rem, 4vw, 4rem);
     padding: 1rem 2rem;
     border-radius: 1rem 4rem;
 }
@@ -197,7 +197,7 @@ header {
 }
 
 .loginContainerMargin {
-    margin-top: 5rem;
+    margin: 5rem 0 5rem 0;
 }
 
 .registerContainer {
@@ -287,9 +287,4 @@ textarea {
         place-items: center;
         min-width: 100vw;
     }
-
-    .uploadButton {
-        font-size: 1rem;
-    }
-
 }
