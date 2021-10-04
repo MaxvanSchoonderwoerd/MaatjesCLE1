@@ -388,15 +388,15 @@ textarea {
 }
 
 .profileContainer{
-    background-color: white;
+    background-color: lightgray;
     width: 60vw;
+    margin-top: 4rem;
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 .profileInfo{
-}
-
-.profileInfo:first-of-type{
-    
+    padding-bottom: 1rem;
 }
 
 /*for screens with a screen size of 600px or lower*/

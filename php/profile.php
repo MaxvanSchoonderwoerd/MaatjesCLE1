@@ -25,10 +25,11 @@ include 'template.php';
 
         <section class="loginSection">
             <div class="profileContainer">
-                <p class="profielInfo">Naam: </p>
-                <p class="profielInfo">Mail: </p>
-                <p class="profielInfo">Wachtwoord: </p>
-                <p class="profielInfo">Telefoon: </p>
+                <p class="profileInfo">Naam: </p>
+                <p class="profileInfo">Mail: </p>
+                <p class="profileInfo">Telefoon: </p>
+                <a href="bewerken.php" class="profileInfo">Bewerken</a>
+                <a href="" class="profileInfo">Account verwijderen</a>
             </div>
         </section>
     </main>
