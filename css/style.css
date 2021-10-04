@@ -32,22 +32,32 @@ html {
 }
 
 .logo {
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
+}
+
+header {
+    position: relative;
 }
 
 .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
-    justify-content: flex-start;
-    background-color: var(--clr_third);
+    justify-content: space-between;
+    /*background-color: var(--clr_third);*/
     align-items: center;
+    z-index: 3;
 }
 
 .listItem {
     position: relative;
-    padding: 2rem 1.25rem 2rem 0.25rem;
+    padding: 2rem 1rem 2rem 1rem;
     text-decoration: none;
     color: white;
+    text-align: center;
 }
 
 .listItem:first-of-type {
@@ -61,6 +71,10 @@ html {
     border-bottom: 3px solid white;
 }
 
+/*##########################*/
+/*info section on homepage*/
+/*##########################*/
+
 .infoSection {
     background: var(--clr_secondary);
     display: flex;
@@ -73,7 +87,7 @@ html {
 }
 
 .infoTitle {
-    padding-top: 1.5rem
+    padding-top: 5rem
 }
 
 .infoBody {
@@ -81,8 +95,32 @@ html {
 }
 
 .infoBody:last-of-type {
-    padding: 1.5rem 0 1.5rem 0;
+    padding: 1.5rem 0 5rem 0;
 }
+
+.infoImg {
+    display: block;
+    object-fit: contain;
+    max-width: 100%;
+}
+
+.gradient {
+    position: relative;
+}
+
+.gradient:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(-180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 60%);
+}
+
+/*##########################*/
+/*upload button with image*/
+/*##########################*/
 
 .btnImgSection {
     background-color: var(--clr_primary);
@@ -123,11 +161,11 @@ html {
     max-width: 40vw;
 }
 
-.infoImg {
-    object-fit: contain;
-    display: block;
-    max-width: 100%;
-}
+
+/*############*/
+/*Login page*/
+/*############*/
+
 
 .loginSection {
     background-color: var(--clr_primary);
