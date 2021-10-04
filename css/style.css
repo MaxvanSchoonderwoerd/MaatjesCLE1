@@ -215,7 +215,7 @@ html {
 }
 
 .input {
-    width: 80vw;
+    width: 30vw;
     height: 2rem;
     margin: 0.5rem;
     color: white;
@@ -223,7 +223,8 @@ html {
 }
 
 .overview{
-
+    padding-bottom: 3rem;
+    overflow: ; 
 }
 
 /*for screens with a screen size of 600px or lower*/
