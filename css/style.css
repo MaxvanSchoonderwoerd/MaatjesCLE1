@@ -25,6 +25,7 @@
 }
 
 html {
+    background-color: var(--clr_primary);
     min-height: 100vh;
     font-family: 'Open Sans', sans-serif;
     background-color: #fdf0d5;
@@ -237,4 +238,9 @@ html {
     .input {
         width: 80vw;
     }
+
+    .uploadButton {
+        font-size: 1rem;
+    }
+
 }
