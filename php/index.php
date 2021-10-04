@@ -32,6 +32,71 @@ include 'template.php';
         </div>
     </section>
 
+    <sectoon class="jobSection">
+        <div class="jobContainer">
+            <div class="jobCard blue">
+                <h1 class="jobTitle">Lorem ipsum dolor.</h1>
+                <p class="jobDescription">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consequatur culpa cupiditate debitis
+                    esse, ex expedita quibusdam sequi suscipit voluptate. Ad aliquid assumenda commodi consectetur
+                    debitis dignissimos, doloremque doloribus earum hic incidunt ipsam laboriosam laudantium magni modi
+                    nam, nostrum odio pariatur perferendis vel voluptas! Accusamus corporis ipsa molestiae neque quas
+                    quod reprehenderit voluptas voluptatibus! Aliquid, consectetur deleniti earum et eum fuga hic iusto
+                    laboriosam libero maiores minus, neque nesciunt officiis quae quis quo rerum soluta tempore? Ad
+                    architecto asperiores autem beatae, consequuntur dolor doloremque earum eos esse harum illum
+                    incidunt iste nisi officiis pariatur ratione sequi unde veritatis voluptate voluptatibus.
+                </p>
+                <p class="jobNameAndPlace blueDark">Lorem ipsum | <span class="uppercase">Rotterdam</span></p>
+                <p id="whiteText" class="jobTel blueDark">Bel nu! <i class="fas fa-phone-alt"></i>0674993764</p>
+            </div>
+            <div class="jobCard green">
+                <h1 class="jobTitle">Lorem ipsum dolor.</h1>
+                <p class="jobDescription">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consequatur culpa cupiditate debitis
+                    esse, ex expedita quibusdam sequi suscipit voluptate. Ad aliquid assumenda commodi consectetur
+                    debitis dignissimos, doloremque doloribus earum hic incidunt ipsam laboriosam laudantium magni modi
+                    nam, nostrum odio pariatur perferendis vel voluptas! Accusamus corporis ipsa molestiae neque quas
+                    quod reprehenderit voluptas voluptatibus! Aliquid, consectetur deleniti earum et eum fuga hic iusto
+                    laboriosam libero maiores minus, neque nesciunt officiis quae quis quo rerum soluta tempore? Ad
+                    architecto asperiores autem beatae, consequuntur dolor doloremque earum eos esse harum illum
+                    incidunt iste nisi officiis pariatur ratione sequi unde veritatis voluptate voluptatibus.
+                </p>
+                <p class="jobNameAndPlace greenDark">Lorem ipsum | <span class="uppercase">Rotterdam</span></p>
+                <p id="whiteText" class="jobTel greenDark">Bel nu! <i class="fas fa-phone-alt"></i>0674993764</p>
+            </div>
+            <div class="jobCard red">
+                <h1 class="jobTitle">Lorem ipsum dolor.</h1>
+                <p class="jobDescription">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consequatur culpa cupiditate debitis
+                    esse, ex expedita quibusdam sequi suscipit voluptate. Ad aliquid assumenda commodi consectetur
+                    debitis dignissimos, doloremque doloribus earum hic incidunt ipsam laboriosam laudantium magni modi
+                    nam, nostrum odio pariatur perferendis vel voluptas! Accusamus corporis ipsa molestiae neque quas
+                    quod reprehenderit voluptas voluptatibus! Aliquid, consectetur deleniti earum et eum fuga hic iusto
+                    laboriosam libero maiores minus, neque nesciunt officiis quae quis quo rerum soluta tempore? Ad
+                    architecto asperiores autem beatae, consequuntur dolor doloremque earum eos esse harum illum
+                    incidunt iste nisi officiis pariatur ratione sequi unde veritatis voluptate voluptatibus.
+                </p>
+                <p class="jobNameAndPlace redDark">Lorem ipsum | <span class="uppercase">Rotterdam</span></p>
+                <p id="whiteText" class="jobTel redDark">Bel nu! <i class="fas fa-phone-alt"></i>0674993764</p>
+            </div>
+            <div class="jobCard purple">
+                <h1 class="jobTitle">Lorem ipsum dolor.</h1>
+                <p class="jobDescription">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consequatur culpa cupiditate debitis
+                    esse, ex expedita quibusdam sequi suscipit voluptate. Ad aliquid assumenda commodi consectetur
+                    debitis dignissimos, doloremque doloribus earum hic incidunt ipsam laboriosam laudantium magni modi
+                    nam, nostrum odio pariatur perferendis vel voluptas! Accusamus corporis ipsa molestiae neque quas
+                    quod reprehenderit voluptas voluptatibus! Aliquid, consectetur deleniti earum et eum fuga hic iusto
+                    laboriosam libero maiores minus, neque nesciunt officiis quae quis quo rerum soluta tempore? Ad
+                    architecto asperiores autem beatae, consequuntur dolor doloremque earum eos esse harum illum
+                    incidunt iste nisi officiis pariatur ratione sequi unde veritatis voluptate voluptatibus.
+                </p>
+                <p class="jobNameAndPlace purpleDark">Lorem ipsum | <span class="uppercase">Rotterdam</span></p>
+                <p id="whiteText" class="jobTel purpleDark">Bel nu! <i class="fas fa-phone-alt"></i>0674993764</p>
+            </div>
+        </div>
+    </sectoon>
+
 </main>
 </body>
 
