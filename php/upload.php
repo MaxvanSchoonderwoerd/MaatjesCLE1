@@ -12,7 +12,7 @@ include 'template.php';
     <main>
     <section class="infoSection">
             <div class="infoContainer">
-                <h1 class="infoTitle">Place your job here!</h1>
+                <h1 class="infoTitle">Plaats jou klus hier!!</h1>
                 <p class="infoBody">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     Ut enim ad minim veniam,
@@ -24,11 +24,11 @@ include 'template.php';
         </section>
         <section class="loginSection">
             <form action="" class="loginContainer loginContainerMargin">
-            <h1>Place a job</h1>
-            <input class="input loginInput" type="text" id="fname" name="fname" placeholder="Title">
-            <input class="input loginInput" type="text" id="fname" name="fname" placeholder="Overview">
-            <input class="input loginInput" type="text" id="fname" name="fname" value="Place">
-            <input class="input loginButton" type="submit" value="Place your job">
+            <h1>Plaats een klus</h1>
+            <input class="input loginInput" type="text" id="fname" name="fname" placeholder="Titel">
+            <input class="input loginInput" type="text" id="fname" name="fname" placeholder="Omschrijving">
+            <input class="input loginInput" type="text" id="fname" name="fname" value="plaats">
+            <input class="input loginButton" type="submit" value="Plaats jou klus">
             </form>
         </section>
     </main>
