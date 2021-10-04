@@ -1,5 +1,6 @@
 <?php
 include 'template.php';
+include 'database.php';
 
 ?>
 
