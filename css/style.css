@@ -157,6 +157,10 @@ html {
     box-shadow: var(--shdw_primary);
 }
 
+.loginContainerMargin{
+    margin-top: 5rem;
+}
+
 .registerContainer {
     padding: 1rem;
     border-radius: 1rem;
