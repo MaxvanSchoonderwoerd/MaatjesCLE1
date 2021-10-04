@@ -267,6 +267,11 @@ header {
 /*for screens with a screen size of 600px or lower*/
 
 @media only screen and (max-width: 600px) {
+
+    .input{
+        width: 80vw;
+    }
+
     .loginRegisterContainer {
         display: grid;
         grid-template-columns: 1fr;

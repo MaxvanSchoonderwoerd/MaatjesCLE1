@@ -27,7 +27,7 @@ include 'template.php';
             <h1>Plaats een klus</h1>
             <input class="input loginInput" type="text" id="fname" name="fname" placeholder="Titel">
             <input class="input loginInput overview" type="text" id="fname" name="fname" placeholder="Omschrijving">
-            <input class="input loginInput" type="text" id="fname" name="fname" value="plaats">
+            <input class="input loginInput" type="text" id="fname" name="fname" placeholder="plaats">
             <input class="input loginButton" type="submit" value="Plaats jou klus">
             </form>
         </section>
