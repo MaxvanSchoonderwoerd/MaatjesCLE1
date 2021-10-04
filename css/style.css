@@ -12,8 +12,19 @@
     /*colors*/
 
     --clr_primary: #fdf0d5;
+
     --clr_secondary: #669bbc;
     --clr_third: #003049;
+
+    --clr_green: #69bc66;
+    --clr_darkGreen: #054900;
+
+    --clr_red: #bc6666;
+    --clr_darkRed: #490000;
+
+    --clr_purple: #9e66bc;
+    --clr_darkPurple: #470049;
+
     /*sizes*/
     --txt_xs: 0.75rem;
     --txt_s: 1rem;
@@ -161,6 +172,112 @@ header {
     object-fit: contain;
     max-width: 40vw;
 }
+
+
+/*############*/
+/*Job card*/
+/*############*/
+
+.jobSection {
+    background: var(--clr_primary);
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.jobContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 3rem 0 3rem 0;
+    width: 80vw;
+    max-width: 80vw;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.jobCard {
+    margin: 2rem;
+    width: 30rem;
+    border-radius: 5px;
+    box-shadow: var(--shdw_secondary);
+}
+
+.jobTitle {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+}
+
+
+.jobDescription {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    overflow: scroll;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    max-height: 12rem;
+    min-height: 12rem;
+}
+
+.jobTel {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0 0 5px 5px;
+}
+
+.jobNameAndPlace {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+
+#whiteText {
+    color: white;
+}
+
+.blue {
+    background-color: var(--clr_secondary);
+    color: white;
+}
+
+.blueDark {
+    background-color: var(--clr_third);
+    color: var(--clr_secondary);
+}
+
+.green {
+    background-color: var(--clr_green);
+    color: white;
+}
+
+.greenDark {
+    background-color: var(--clr_darkGreen);
+    color: var(--clr_green);
+}
+
+
+.red {
+    background-color: var(--clr_red);
+    color: white;
+}
+
+.redDark {
+    background-color: var(--clr_darkRed);
+    color: var(--clr_red);
+}
+
+.purple {
+    background-color: var(--clr_purple);
+    color: white;
+}
+
+.purpleDark {
+    background-color: var(--clr_darkPurple);
+    color: var(--clr_purple);
+}
+
 
 
 /*############*/
