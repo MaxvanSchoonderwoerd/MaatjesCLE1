@@ -1,16 +1,14 @@
 <?php
-include 'template.php';
+function redirect($url, $statusCode = 303)
+{
+    header('Location: ' . $url, true, $statusCode);
+    die();
+}
 
-?>
+session_start();
 
-<?= template_head("Logout") ?>
-
-<body>
-
-<?= template_header("Logout") ?>
-
-<main>
-
-</main>
-</body>
-</html>
+if ($_SESSION['loggedIn'] == true) {
+    session_unset();
+    session_destroy();
+    redirect("index.php");
+}

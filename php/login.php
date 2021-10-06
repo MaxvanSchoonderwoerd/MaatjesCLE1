@@ -15,7 +15,7 @@ function redirect($url, $statusCode = 303)
 if (!empty($_POST)) {
     // if the post has the variable "loginEmail" and "loginPassword" set
     if (isset($_POST['loginEmail']) && isset($_POST['loginPassword'])) {
-    //if we are connected to a database
+        //if we are connected to a database
         if (isset($db)) {
 
             //get the name from the input of the user
@@ -26,7 +26,7 @@ if (!empty($_POST)) {
 
             //look through the database for the user's inputted "email" and get its corresponding hashed password
 
-            $sql ="SELECT password FROM users WHERE email = '$email'";
+            $sql = "SELECT password FROM users WHERE email = '$email'";
 
 
             //this is some complicated stuff
@@ -44,11 +44,16 @@ if (!empty($_POST)) {
                 session_start();
                 $_SESSION["loggedIn"] = true;
                 $_SESSION["email"] = $email;
+
+                $idQuery = mysqli_query($db, "SELECT id FROM users WHERE email = '$email'");
+                $result = mysqli_fetch_array($idQuery);
+
+                $_SESSION["userId"] = $result['id'];
                 //clear the post
                 $_POST = null;
 
                 //send to home.php
-                redirect("index.php");
+                redirect("upload.php");
 
             }
         }
@@ -105,8 +110,9 @@ if (isset($db)) {
             <form class="loginContainer" method="post">
                 <h2>Login</h2>
                 <input class="input loginInput" type="email" id="loginEmail" name="loginEmail" placeholder="Email">
-                <input class="input loginInput" type="password" id="loginPassword" name="loginPassword" placeholder="Password">
-                <button class="input loginButton" type="submit" >Login</button>
+                <input class="input loginInput" type="password" id="loginPassword" name="loginPassword"
+                       placeholder="Password">
+                <button class="input loginButton" type="submit">Login</button>
             </form>
             <form class="registerContainer " method="post">
                 <h2>Nog geen account? </h2>

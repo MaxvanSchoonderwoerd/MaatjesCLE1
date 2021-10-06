@@ -36,17 +36,21 @@ include 'database.php';
         <div class="jobContainer">
             <?php
             $jobResult = mysqli_query($db, "SELECT * FROM jobs");
-            $userResult = mysqli_query($db, "SELECT * FROM users");
 
-            while ($userRow = mysqli_fetch_array($userResult)) {
-                $name = $userRow['first_name'];
-                $tel = $userRow['tel'];
-            }
 
             while ($jobRow = mysqli_fetch_array($jobResult)) {
+                $userId = $jobRow['user_id'];
+
+                $userResult = mysqli_query($db, "SELECT * FROM users WHERE id = '$userId'");
+                while ($userRow = mysqli_fetch_array($userResult)) {
+                    $name = $userRow['first_name'];
+                    $tel = $userRow['tel'];
+                }
                 $title = $jobRow['title'];
                 $description = $jobRow['description'];
                 $city = $jobRow['city'];
+
+
                 switch ($jobRow['job_id'] % 4) {
                     case
                     0:

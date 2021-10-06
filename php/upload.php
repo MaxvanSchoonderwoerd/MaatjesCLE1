@@ -2,17 +2,28 @@
 include 'template.php';
 include 'database.php';
 
+function redirect($url, $statusCode = 303)
+{
+    header('Location: ' . $url, true, $statusCode);
+    die();
+}
+
+session_start();
+
+if ($_SESSION['loggedIn'] == false) {
+    redirect("index.php");
+}
+
+
 if (isset($db)) {
     if (!empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['city'])) {
-
-//        $user_id = $_SESSION['id'];
-
 
         $title = mysqli_escape_string($db, $_POST['title']);
         $description = mysqli_escape_string($db, $_POST['description']);
         $city = mysqli_escape_string($db, $_POST['city']);
+        $userId = $_SESSION['userId'];
 
-        $sql = "INSERT INTO `jobs` (`job_id`, `user_id`, `title`, `description`, `city`) VALUES (NULL, '1', '$title', '$description', '$city');";
+        $sql = "INSERT INTO `jobs` (`job_id`, `user_id`, `title`, `description`, `city`) VALUES (NULL, '$userId', '$title', '$description', '$city');";
         if (mysqli_query($db, $sql) == false) {
             throw new \Exception();
         }
