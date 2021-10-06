@@ -19,14 +19,19 @@ EOT;
 
 function jobGenerator($color, $title, $description, $name, $city, $tel)
 {
+    $title = htmlentities($title);
+    $description = htmlentities($description);
+    $name = htmlentities($name);
+    $city = htmlentities($city);
+    $tel = htmlentities($tel);
     echo <<<EOT
             <div class="jobCard $color">
                 <h1 class="jobTitle">$title</h1>
                 <p class="jobDescription">
                  $description
                 </p>
-                <p class="jobNameAndPlace dark$color">$name | <span class="uppercase">$city</span></p>
-                <p id="whiteText" class="jobTel dark$color">Bel nu! <i class="fas fa-phone-alt"></i>$tel</p>
+                <p class="jobNameAndPlace dark$color"><i class="fas fa-user"></i> $name | <i class="fas fa-map-marker-alt"></i><span class="uppercase"> $city</span></p>
+                <p id="whiteText" class="jobTel dark$color"><i class="fas fa-phone-alt"></i> $tel</p>
             </div>
 EOT;
 }

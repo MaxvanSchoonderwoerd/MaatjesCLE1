@@ -205,7 +205,7 @@ header {
 .jobTitle {
     font-size: 1.5rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
-    box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 
@@ -277,7 +277,6 @@ header {
     background-color: var(--clr_darkPurple);
     color: var(--clr_purple);
 }
-
 
 
 /*############*/
@@ -387,7 +386,7 @@ textarea {
     padding-bottom: 3rem;
 }
 
-.profileContainer{
+.profileContainer {
     background-color: lightgray;
     width: 60vw;
     margin-top: 4rem;
@@ -395,7 +394,7 @@ textarea {
     border-radius: 1rem;
 }
 
-.profileInfo{
+.profileInfo {
     padding-bottom: 1rem;
 }
 
