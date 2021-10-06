@@ -39,7 +39,8 @@ if (!empty($_POST)) {
             //if it matches
             if ($valid == true) {
                 echo "logged in";
-//                //start the session
+
+                //start the session
                 session_start();
                 $_SESSION["loggedIn"] = true;
                 $_SESSION["email"] = $email;
