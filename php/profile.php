@@ -31,7 +31,16 @@ include 'template.php';
                 <a href="bewerken.php" class="profileInfo">Bewerken</a>
                 <a href="" class="profileInfo">Account verwijderen</a>
             </div>
-            
+        </section>
+
+        <section class="loginSection">
+            <div class="profileContainer">
+                <p class="profileInfo">Titel: </p>
+                <p class="profileInfo">Omschrijving: </p>
+                <p class="profileInfo">Plaats: </p>
+                <a href="bewerken.php" class="profileInfo">Bewerken</a>
+                <a href="" class="profileInfo">Klus verwijderen</a>
+            </div>
         </section>
     </main>
 </body>
