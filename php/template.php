@@ -1,5 +1,7 @@
 <?php
 
+
+
 function template_head($page)
 {
     echo <<<EOT
@@ -71,11 +73,28 @@ function template_header($page)
     <div class="header">
         <a href="index.php" class="listItem"><img class="logo" src="../src/maatjesLogoAlt.png" alt="Maatjes"></a>
         <a href="index.php" class="listItem">Home<div class="$home"></div></a>
+EOT;
+    //check if a session has been started
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    //if logged in
+    if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true) {
+        echo <<<EOT
         <a href="upload.php" class="listItem">Upload<div class="$upload"></div></a>
         <a href="profile.php" class="listItem ">Profiel<div class="$profile"></div></a>
-        <a href="login.php" class="listItem ">Login<div class="$login"></div></a>
         <a href="logout.php" class="listItem ">Uitloggen<div class="$logout"></div></a>
     </div>
 </header>
 EOT;
+    } else {
+        //if logged out
+        echo <<<EOT
+        <a href="login.php" class="listItem ">Login<div class="$login"></div></a>
+    </div>
+</header>
+EOT;
+    }
+
 }

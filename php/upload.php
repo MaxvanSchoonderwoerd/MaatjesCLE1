@@ -2,7 +2,17 @@
 include 'template.php';
 include 'database.php';
 
+function redirect($url, $statusCode = 303)
+{
+    header('Location: ' . $url, true, $statusCode);
+    die();
+}
+
 session_start();
+
+if ($_SESSION['loggedIn'] == false) {
+    redirect("index.php");
+}
 
 
 if (isset($db)) {
