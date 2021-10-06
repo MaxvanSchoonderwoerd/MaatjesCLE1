@@ -114,7 +114,7 @@ if (isset($db)) {
                        placeholder="Password">
                 <button class="input loginButton" type="submit">Login</button>
             </form>
-            <form class="registerContainer " method="post">
+            <form class="registerContainer" method="post">
                 <h2>Nog geen account? </h2>
                 <div class="input nameContainer">
                     <input class="loginInput nameInput name" type="text" id="firstname" name="firstname"

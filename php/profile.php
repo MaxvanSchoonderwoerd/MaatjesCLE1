@@ -51,10 +51,17 @@ if ($_SESSION['loggedIn'] == false) {
             }
 
             ?>
-            <p class="profileInfo profileUnderline">Naam: <?= $firstName ?> <?= $lastName ?></p>
-            <p class="profileInfo profileUnderline">Mail: <?= $email ?></p>
-            <p class="profileInfo profileUnderline">Telefoon: <?= $tel ?> </p>
-            <a href="bewerken.php" class="profileInfo">Bewerken</a>
+                <h1>Verander gegevens</h1>
+            <form action="" method="post">
+                <p class="profileInfo profileUnderline"><input type="text" id="voornaam" name="voornaam" placeholder=<?= $firstName ?>>
+                    <button type="submit"><i class="fas fa-user-edit"></i></button></p>
+                <p class="profileInfo profileUnderline"><input type="text" id="achternaam" name="achternaam" placeholder=<?= $lastName ?>>
+                    <button type="submit"><i class="fas fa-user-edit"></i></button></p>
+                <p class="profileInfo profileUnderline"><input type="text" id="email" name="email" placeholder=<?= $email ?>>
+                    <button type="submit"><i class="fas fa-user-edit"></i></button></p>
+                <p class="profileInfo profileUnderline"><input type="text" id="telefoon" name="telefoon" placeholder=<?= $tel ?>>
+                    <button type="submit"><i class="fas fa-user-edit"></i></button></p>
+            </form>
         </div>
 
     </section>
