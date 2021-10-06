@@ -53,7 +53,7 @@ if (!empty($_POST)) {
                 $_POST = null;
 
                 //send to home.php
-                redirect("upload.php");
+                redirect("index.php");
 
             }
         }
@@ -78,6 +78,26 @@ if (isset($db)) {
 
         if (mysqli_query($db, $sql) == false) {
             throw new \Exception();
+        }
+
+        $valid = true;
+        if ($valid == true) {
+
+            //start the session
+            session_start();
+            $_SESSION["loggedIn"] = true;
+            $_SESSION["email"] = $email;
+
+            $idQuery = mysqli_query($db, "SELECT id FROM users WHERE email = '$email'");
+            $result = mysqli_fetch_array($idQuery);
+
+            $_SESSION["userId"] = $result['id'];
+            //clear the post
+            $_POST = null;
+
+            //send to home.php
+            redirect("index.php");
+
         }
     }
 }
