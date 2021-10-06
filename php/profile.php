@@ -41,26 +41,20 @@ if ($_SESSION['loggedIn'] == false) {
             <?php
             $userEmail = $_SESSION["email"];
             $userResult = mysqli_query($db, "SELECT * FROM users WHERE email = '$userEmail'");
-
-
             while ($userRow = mysqli_fetch_array($userResult)) {
                 $firstName = $userRow['first_name'];
                 $lastName = $userRow['last_name'];
                 $email = $userRow['email'];
                 $tel = $userRow['tel'];
             }
-
             ?>
-                <h1>Verander gegevens</h1>
+            <h1 class="inputTitle">Verander gegevens</h1>
             <form action="" method="post">
-                <p class="profileInfo profileUnderline"><input type="text" id="voornaam" name="voornaam" placeholder=<?= $firstName ?>>
-                    <button type="submit"><i class="fas fa-user-edit"></i></button></p>
-                <p class="profileInfo profileUnderline"><input type="text" id="achternaam" name="achternaam" placeholder=<?= $lastName ?>>
-                    <button type="submit"><i class="fas fa-user-edit"></i></button></p>
-                <p class="profileInfo profileUnderline"><input type="text" id="email" name="email" placeholder=<?= $email ?>>
-                    <button type="submit"><i class="fas fa-user-edit"></i></button></p>
-                <p class="profileInfo profileUnderline"><input type="text" id="telefoon" name="telefoon" placeholder=<?= $tel ?>>
-                    <button type="submit"><i class="fas fa-user-edit"></i></button></p>
+                <input class="profileInput" type="text" id="voornaam" name="voornaam" placeholder=<?= $firstName ?>>
+                <input class="profileInput" type="text" id="achternaam" name="achternaam" placeholder=<?= $lastName ?>>
+                <input class="profileInput" type="text" id="email" name="email" placeholder=<?= $email ?>>
+                <input class="profileInput" type="text" id="telefoon" name="telefoon" placeholder=<?= $tel ?>>
+                <button class="profileButton" type="submit">Verander gegevens <i class="fas fa-user-edit"></i></button>
             </form>
         </div>
 
