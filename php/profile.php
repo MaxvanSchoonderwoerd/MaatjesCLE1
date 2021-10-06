@@ -1,5 +1,6 @@
 <?php
 include 'template.php';
+include 'database.php';
 
 ?>
 
@@ -25,23 +26,48 @@ include 'template.php';
 
         <section class="loginSection">
             <div class="profileContainer">
-                <p class="profileInfo">Naam: </p>
-                <p class="profileInfo">Mail: </p>
-                <p class="profileInfo">Telefoon: </p>
-                <a href="bewerken.php" class="profileInfo">Bewerken</a>
-                <a href="" class="profileInfo">Account verwijderen</a>
+                <p class="profileInfo profileUnderline">Naam: </p>
+                <p class="profileInfo profileUnderline">Mail: </p>
+                <p class="profileInfo profileUnderline">Telefoon: </p>
+                <a href="bewerken.php" class="profileButton">Bewerken</a>
             </div>
         </section>
 
-        <section class="loginSection">
-            <div class="profileContainer">
-                <p class="profileInfo">Titel: </p>
-                <p class="profileInfo">Omschrijving: </p>
-                <p class="profileInfo">Plaats: </p>
-                <a href="bewerken.php" class="profileInfo">Bewerken</a>
-                <a href="" class="profileInfo">Klus verwijderen</a>
-            </div>
-        </section>
+        <section class="jobSection">
+        <div class="jobContainer">
+            <?php
+            $jobResult = mysqli_query($db, "SELECT * FROM jobs");
+            $userResult = mysqli_query($db, "SELECT * FROM users");
+
+            while ($userRow = mysqli_fetch_array($userResult)) {
+                $name = $userRow['first_name'];
+                $tel = $userRow['tel'];
+            }
+
+            while ($jobRow = mysqli_fetch_array($jobResult)) {
+                $title = $jobRow['title'];
+                $description = $jobRow['description'];
+                $city = $jobRow['city'];
+                switch ($jobRow['job_id'] % 4) {
+                    case
+                    0:
+                        $color = "blue";
+                        break;
+                    case 1:
+                        $color = "green";
+                        break;
+                    case 2:
+                        $color = "red";
+                        break;
+                    case 3:
+                        $color = "purple";
+                        break;
+                }
+                jobGenerator("$color", "$title", "$description", "$name", "$city", "$tel");
+            }
+            ?>
+        </div>
+    </section>
     </main>
 </body>
 
