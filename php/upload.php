@@ -1,5 +1,23 @@
 <?php
 include 'template.php';
+include 'database.php';
+
+if (isset($db)) {
+    if (!empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['city'])) {
+
+//        $user_id = $_SESSION['id'];
+
+
+        $title = mysqli_escape_string($db, $_POST['title']);
+        $description = mysqli_escape_string($db, $_POST['description']);
+        $city = mysqli_escape_string($db, $_POST['city']);
+
+        $sql = "INSERT INTO `jobs` (`job_id`, `user_id`, `title`, `description`, `city`) VALUES (NULL, '1', '$title', '$description', '$city');";
+        if (mysqli_query($db, $sql) == false) {
+            throw new \Exception();
+        }
+    }
+}
 
 ?>
 
@@ -23,12 +41,13 @@ include 'template.php';
         </div>
     </section>
     <section class="loginSection">
-        <form class="loginContainer loginContainerMargin">
+        <form action="" method="post" class="loginContainer loginContainerMargin">
             <h1>Plaats een klus</h1>
-            <input class="input loginInput" type="text" id="fname" name="fname" placeholder="Titel">
-            <textarea class="input loginInput overview" type="text" id="fname" name="fname" placeholder="Omschrijving"></textarea>
-            <input class="input loginInput" type="text" id="fname" name="fname" placeholder="plaats">
-            <input class="input loginButton" type="submit" value="Plaats jou klus">
+            <input class="input loginInput" type="text" id="title" name="title" placeholder="Titel">
+            <textarea class="input loginInput overview" type="text" id="description" name="description"
+                      placeholder="Omschrijving"></textarea>
+            <input class="input loginInput" type="text" id="city" name="city" placeholder="plaats">
+            <button class="input loginButton" type="submit">Plaats jou klus</button>
         </form>
     </section>
 </main>
