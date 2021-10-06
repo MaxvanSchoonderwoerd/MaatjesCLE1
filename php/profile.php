@@ -51,13 +51,53 @@ if ($_SESSION['loggedIn'] == false) {
             }
 
             ?>
-            <p class="profileInfo">Naam: <?= $first_name ?> <?= $last_name ?></p>
-            <p class="profileInfo">Mail: <?= $email ?></p>
-            <p class="profileInfo">Telefoon: <?= $tel ?> </p>
+            <p class="profileInfo profileUnderline">Naam: <?= $firstName ?> <?= $lastName ?></p>
+            <p class="profileInfo profileUnderline">Mail: <?= $email ?></p>
+            <p class="profileInfo profileUnderline">Telefoon: <?= $tel ?> </p>
             <a href="bewerken.php" class="profileInfo">Bewerken</a>
-            <a href="" class="profileInfo">Account verwijderen</a>
         </div>
 
+    </section>
+    <section class="jobSection">
+        <div class="jobContainer">
+            <?php
+
+            $userId = $_SESSION["userId"];
+            $jobResult = mysqli_query($db, "SELECT * FROM jobs WHERE user_id = '$userId'");
+
+
+            while ($jobRow = mysqli_fetch_array($jobResult)) {
+                $userId = $jobRow['user_id'];
+
+                $userResult = mysqli_query($db, "SELECT * FROM users WHERE id = '$userId'");
+                while ($userRow = mysqli_fetch_array($userResult)) {
+                    $name = $userRow['first_name'];
+                    $tel = $userRow['tel'];
+                }
+                $title = $jobRow['title'];
+                $description = $jobRow['description'];
+                $city = $jobRow['city'];
+
+
+                switch ($jobRow['job_id'] % 4) {
+                    case
+                    0:
+                        $color = "blue";
+                        break;
+                    case 1:
+                        $color = "green";
+                        break;
+                    case 2:
+                        $color = "red";
+                        break;
+                    case 3:
+                        $color = "purple";
+                        break;
+                }
+                jobGenerator("$color", "$title", "$description", "$name", "$city", "$tel");
+            }
+            ?>
+        </div>
     </section>
 </main>
 </body>
