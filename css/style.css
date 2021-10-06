@@ -68,7 +68,7 @@ header {
     position: relative;
     padding: 2rem 1rem 2rem 1rem;
     text-decoration: none;
-    color: white;
+    color: var(--clr_primary);
     text-align: center;
 }
 
@@ -95,7 +95,7 @@ header {
 
 .infoContainer {
     max-width: 80vw;
-    color: white;
+    color: var(--clr_primary);
 }
 
 .infoTitle {
@@ -234,12 +234,12 @@ header {
 
 
 #whiteText {
-    color: white;
+    color: var(--clr_primary);
 }
 
 .blue {
     background-color: var(--clr_secondary);
-    color: white;
+    color: var(--clr_primary);
 }
 
 .darkblue {
@@ -249,7 +249,7 @@ header {
 
 .green {
     background-color: var(--clr_green);
-    color: white;
+    color: var(--clr_primary);
 }
 
 .darkgreen {
@@ -260,7 +260,7 @@ header {
 
 .red {
     background-color: var(--clr_red);
-    color: white;
+    color: var(--clr_primary);
 }
 
 .darkred {
@@ -270,7 +270,7 @@ header {
 
 .purple {
     background-color: var(--clr_purple);
-    color: white;
+    color: var(--clr_primary);
 }
 
 .darkpurple {
@@ -306,7 +306,7 @@ header {
 .loginContainer {
     padding: 1rem;
     border-radius: 1rem;
-    background-color: white;
+    background-color: var(--clr_secondary);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -320,7 +320,7 @@ header {
 .registerContainer {
     padding: 1rem;
     border-radius: 1rem;
-    background-color: white;
+    background-color: var(--clr_secondary);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -328,13 +328,13 @@ header {
 }
 
 .loginInput {
-    background: var(--clr_secondary);
+    background: var(--clr_primary);
     padding: 1rem;
     border-radius: 10px;
 }
 
 .loginInput::placeholder {
-    color: white;
+    color: var(--clr_secondary);
 }
 
 
@@ -353,8 +353,8 @@ header {
 .nameInput {
     width: 50%;
     height: 2rem;
-    background: var(--clr_secondary);
-    color: white;
+    background: var(--clr_primary);
+    color: var(--clr_third);
     border: none;
     padding: 1rem;
 }
@@ -373,7 +373,7 @@ header {
     width: 30vw;
     height: 2rem;
     margin: 0.5rem;
-    color: white;
+    color: var(--clr_third);
     border: none;
 }
 
@@ -388,9 +388,11 @@ textarea {
 }
 
 .profileContainer{
-    background-color: white;
-    width: 60vw;
-    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr_secondary);
+    width: 40rem;
+    margin: 4rem 1rem 0 1rem;
     padding: 1rem;
     border-radius: 1rem;
     box-shadow: var(--shdw_primary);
@@ -401,14 +403,43 @@ textarea {
     margin: 0.5rem;
 }
 
-.profileUnderline{
-    border-bottom-style: groove;
-    color: black;
+.profileInput {
+    border-radius: 10px;
+    background-color: var(--clr_primary);
+    color: var(--clr_third);
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
-.profileButton{
+.profileInput::placeholder{
+    color: var(--clr_secondary);
+}
+
+.profileUnderline{
+    border-bottom-style: groove;
+    color: var(--clr_primary);
+}
+
+#loginButton {
+    color: var(--clr_primary);
+}
+
+.inputTitle{
+    color: var(--clr_primary);
+}
+
+.profileButton {
+    margin-top: 0.5rem;
+    color: var(--clr_primary);
+    background-color: var(--clr_third);
+    border-radius: 10px;
     text-decoration: none;
-    padding-left: 1rem;
+    padding: 1rem;
+    border: none;
+    font-size: 1rem;
 }
 
 .changeSection

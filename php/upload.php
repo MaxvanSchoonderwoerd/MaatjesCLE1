@@ -18,9 +18,9 @@ if ($_SESSION['loggedIn'] == false) {
 if (isset($db)) {
     if (!empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['city'])) {
 
-        $title = mysqli_escape_string($db, $_POST['title']);
-        $description = mysqli_escape_string($db, $_POST['description']);
-        $city = mysqli_escape_string($db, $_POST['city']);
+        $title = mysqli_escape_string($db,  htmlentities($_POST['title']));
+        $description = mysqli_escape_string($db,  htmlentities($_POST['description']));
+        $city = mysqli_escape_string($db, htmlentities($_POST['city']));
         $userId = $_SESSION['userId'];
 
         $sql = "INSERT INTO `jobs` (`job_id`, `user_id`, `title`, `description`, `city`) VALUES (NULL, '$userId', '$title', '$description', '$city');";
@@ -53,12 +53,12 @@ if (isset($db)) {
     </section>
     <section class="loginSection">
         <form action="" method="post" class="loginContainer loginContainerMargin">
-            <h1>Plaats een klus</h1>
+            <h1 class="inputTitle">Plaats een klus</h1>
             <input class="input loginInput" type="text" id="title" name="title" placeholder="Titel">
             <textarea class="input loginInput overview" type="text" id="description" name="description"
                       placeholder="Omschrijving"></textarea>
             <input class="input loginInput" type="text" id="city" name="city" placeholder="plaats">
-            <button class="input loginButton" type="submit">Plaats jou klus</button>
+            <button class="input loginButton" id="loginButton" type="submit">Plaats jou klus</button>
         </form>
     </section>
 </main>

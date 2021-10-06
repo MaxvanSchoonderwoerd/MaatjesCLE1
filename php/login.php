@@ -19,10 +19,10 @@ if (!empty($_POST)) {
         if (isset($db)) {
 
             //get the name from the input of the user
-            $email = mysqli_escape_string($db, $_POST['loginEmail']);
+            $email = mysqli_escape_string($db, htmlentities($_POST['loginEmail']));
 
             //get the password from the input of the user
-            $password = mysqli_escape_string($db, $_POST['loginPassword']);
+            $password = mysqli_escape_string($db,htmlentities($_POST['loginPassword']));
 
             //look through the database for the user's inputted "email" and get its corresponding hashed password
 
@@ -67,11 +67,11 @@ if (!empty($_POST)) {
 if (isset($db)) {
     if (!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['email']) && !empty($_POST['tel']) && !empty($_POST['password'])) {
 
-        $firstname = mysqli_escape_string($db, $_POST['firstname']);
-        $lastname = mysqli_escape_string($db, $_POST['lastname']);
-        $email = mysqli_escape_string($db, $_POST['email']);
-        $tel = mysqli_escape_string($db, $_POST['tel']);
-        $password = mysqli_escape_string($db, $_POST['password']);
+        $firstname = mysqli_escape_string($db, htmlentities($_POST['firstname']));
+        $lastname = mysqli_escape_string($db, htmlentities($_POST['lastname']));
+        $email = mysqli_escape_string($db, htmlentities($_POST['email']));
+        $tel = mysqli_escape_string($db, htmlentities($_POST['tel']));
+        $password = mysqli_escape_string($db, htmlentities($_POST['password']));
         $hash = password_hash($password, PASSWORD_DEFAULT);
 
         $sql = "INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `email`, `tel`) VALUES (NULL, '$firstname', '$lastname', '$hash', '$email', '$tel')";
@@ -128,14 +128,14 @@ if (isset($db)) {
         <div class="loginRegisterContainer">
 
             <form class="loginContainer" method="post">
-                <h2>Login</h2>
+                <h2 class="inputTitle">Login</h2>
                 <input class="input loginInput" type="email" id="loginEmail" name="loginEmail" placeholder="Email">
                 <input class="input loginInput" type="password" id="loginPassword" name="loginPassword"
                        placeholder="Password">
-                <button class="input loginButton" type="submit">Login</button>
+                <button class="input loginButton" id="loginButton" type="submit">Login</button>
             </form>
             <form class="registerContainer" method="post">
-                <h2>Nog geen account? </h2>
+                <h2 class="inputTitle">Nog geen account? </h2>
                 <div class="input nameContainer">
                     <input class="loginInput nameInput name" type="text" id="firstname" name="firstname"
                            placeholder="Name">
@@ -145,7 +145,7 @@ if (isset($db)) {
                 <input class="input loginInput" type="email" id="email" name="email" placeholder="Email">
                 <input class="input loginInput" type="tel" id="tel" name="tel" placeholder="Telefoon Nummer">
                 <input class="input loginInput" type="password" id="password" name="password" placeholder="Password">
-                <button class="input loginButton" type="submit">Registreren</button>
+                <button class="input loginButton" id="loginButton" type="submit">Registreren</button>
             </form>
         </div>
     </section>

@@ -50,7 +50,6 @@ include 'database.php';
                 $description = $jobRow['description'];
                 $city = $jobRow['city'];
 
-
                 switch ($jobRow['job_id'] % 4) {
                     case
                     0:
