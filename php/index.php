@@ -65,7 +65,7 @@ include 'database.php';
                         $color = "purple";
                         break;
                 }
-                jobGenerator("$color", "$title", "$description", "$name", "$city", "$tel");
+                jobGenerator("$color", "$title", "$description", "$name", "$city", "$tel", false);
             }
             ?>
         </div>

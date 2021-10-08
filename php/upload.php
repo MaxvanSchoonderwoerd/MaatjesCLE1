@@ -54,10 +54,10 @@ if (isset($db)) {
     <section class="loginSection">
         <form action="" method="post" class="loginContainer loginContainerMargin">
             <h1 class="inputTitle">Plaats een klus</h1>
-            <input class="input loginInput" type="text" id="title" name="title" placeholder="Titel">
-            <textarea class="input loginInput overview" type="text" id="description" name="description"
+            <input class="input loginInput" type="text" id="title" name="title" maxlength="40" placeholder="Titel">
+            <textarea class="input loginInput overview" type="text" id="description" name="description" maxlength="480"
                       placeholder="Omschrijving"></textarea>
-            <input class="input loginInput" type="text" id="city" name="city" placeholder="plaats">
+            <input class="input loginInput" type="text" id="city" name="city" maxlength="30" placeholder="plaats">
             <button class="input loginButton" id="loginButton" type="submit">Plaats jou klus</button>
         </form>
     </section>

@@ -39,21 +39,39 @@ if ($_SESSION['loggedIn'] == false) {
     <section class="loginSection">
         <div class="profileContainer">
             <?php
-            $userEmail = $_SESSION["email"];
-            $userResult = mysqli_query($db, "SELECT * FROM users WHERE email = '$userEmail'");
+
+            //storing userId from session in a variable so we can use it in mysqli queries
+            $userId = $_SESSION["userId"];
+
+            //selecting the row of the user using the user id
+            $userResult = mysqli_query($db, "SELECT * FROM users WHERE id = '$userId'");
+
+            //looping through the row setting each variable
             while ($userRow = mysqli_fetch_array($userResult)) {
                 $firstName = $userRow['first_name'];
                 $lastName = $userRow['last_name'];
                 $email = $userRow['email'];
                 $tel = $userRow['tel'];
             }
+
+            //editing user info
+            if (!empty($_POST['firstname']) || !empty($_POST['lastname']) || !empty($_POST['email']) || !empty($_POST['tel'])) {
+                $firstName = mysqli_escape_string($db, htmlentities($_POST['firstname']));
+                $lastName = mysqli_escape_string($db, htmlentities($_POST['lastname']));
+                $email = mysqli_escape_string($db, htmlentities($_POST['email']));
+                $tel = mysqli_escape_string($db, htmlentities($_POST['tel']));
+
+                $sql = "UPDATE users SET first_name = '$firstName', last_name = '$lastName', email = '$email', tel = '$tel' WHERE id = '$userId'";
+                $result = mysqli_query($db, $sql);
+            }
+
             ?>
             <h1 class="inputTitle">Verander gegevens</h1>
             <form action="" method="post">
-                <input class="profileInput" type="text" id="voornaam" name="voornaam" placeholder=<?= $firstName ?>>
-                <input class="profileInput" type="text" id="achternaam" name="achternaam" placeholder=<?= $lastName ?>>
+                <input class="profileInput" type="text" id="firstname" name="firstname" placeholder=<?= $firstName ?>>
+                <input class="profileInput" type="text" id="lastname" name="lastname" placeholder=<?= $lastName ?>>
                 <input class="profileInput" type="text" id="email" name="email" placeholder=<?= $email ?>>
-                <input class="profileInput" type="text" id="telefoon" name="telefoon" placeholder=<?= $tel ?>>
+                <input class="profileInput" type="text" id="tel" name="tel" placeholder=<?= $tel ?>>
                 <button class="profileButton" type="submit">Verander gegevens <i class="fas fa-user-edit"></i></button>
             </form>
         </div>
@@ -63,12 +81,20 @@ if ($_SESSION['loggedIn'] == false) {
         <div class="jobContainer">
             <?php
 
+            //deleting jobs
+            if (isset($_POST['deleteBtn'])) {
+                $_jobId = $_POST['deleteBtn'];
+                $sql = "DELETE FROM jobs WHERE job_id = '$_jobId'";
+                mysqli_query($db, $sql);
+            }
+
             $userId = $_SESSION["userId"];
             $jobResult = mysqli_query($db, "SELECT * FROM jobs WHERE user_id = '$userId'");
 
 
             while ($jobRow = mysqli_fetch_array($jobResult)) {
                 $userId = $jobRow['user_id'];
+                $jobId = $jobRow['job_id'];
 
                 $userResult = mysqli_query($db, "SELECT * FROM users WHERE id = '$userId'");
                 while ($userRow = mysqli_fetch_array($userResult)) {
@@ -95,7 +121,7 @@ if ($_SESSION['loggedIn'] == false) {
                         $color = "purple";
                         break;
                 }
-                jobGenerator("$color", "$title", "$description", "$name", "$city", "$tel");
+                jobGeneratorDelete("$color", "$title", "$description", "$name", "$city", "$tel", "$jobId");
             }
             ?>
         </div>

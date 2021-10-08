@@ -1,7 +1,6 @@
 <?php
 
 
-
 function template_head($page)
 {
     echo <<<EOT
@@ -26,6 +25,7 @@ function jobGenerator($color, $title, $description, $name, $city, $tel)
     $name = htmlentities($name);
     $city = htmlentities($city);
     $tel = htmlentities($tel);
+
     echo <<<EOT
             <div class="jobCard $color">
                 <h1 class="jobTitle">$title</h1>
@@ -37,6 +37,21 @@ function jobGenerator($color, $title, $description, $name, $city, $tel)
             </div>
 EOT;
 }
+
+function jobGeneratorDelete($color, $title, $description, $name, $city, $tel, $jobId)
+{
+    echo <<<EOT
+            <div class="jobCard $color">
+                <h1 class="jobTitle">$title <form method="post"><button type="submit" class="deleteBtn" name="deleteBtn" value="$jobId">X</button></form></h1>
+                <p class="jobDescription">
+                 $description
+                </p>
+                <p class="jobNameAndPlace dark$color"><i class="fas fa-user"></i> $name | <i class="fas fa-map-marker-alt"></i><span class="uppercase"> $city</span></p>
+                <p id="whiteText" class="jobTel dark$color"><i class="fas fa-phone-alt"></i> $tel</p>
+            </div>
+EOT;
+}
+
 
 function template_header($page)
 {
