@@ -11,7 +11,7 @@ function redirect($url, $statusCode = 303)
 session_start();
 
 if ($_SESSION['loggedIn'] == false) {
-    redirect("index.php");
+    redirect("login.php");
 }
 
 

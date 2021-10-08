@@ -14,6 +14,8 @@ if ($_SESSION['loggedIn'] == false) {
     redirect("index.php");
 }
 
+$warning = "hidden";
+
 ?>
 
 <?= template_head("Profile") ?>

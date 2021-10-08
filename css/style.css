@@ -460,8 +460,6 @@ h1 > form {
 
 }
 
-.changeSection
-
 /*for screens with a screen size of 600px or lower*/
 
 @media only screen and (max-width: 600px) {
