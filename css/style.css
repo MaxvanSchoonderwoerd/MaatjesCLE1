@@ -437,6 +437,10 @@ header {
     border: none;
 }
 
+a {
+    color: var(--clr_primary);
+}
+
 textarea {
     min-width: 30vw;
     min-height: 10rem;

@@ -20,9 +20,9 @@ $succes = "hidden";
 if (isset($db)) {
     if (!empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['city'])) {
 
-        $title = mysqli_escape_string($db, htmlentities($_POST['title']));
-        $description = mysqli_escape_string($db, htmlentities($_POST['description']));
-        $city = mysqli_escape_string($db, htmlentities($_POST['city']));
+        $title = mysqli_escape_string($db, $_POST['title']);
+        $description = mysqli_escape_string($db, $_POST['description']);
+        $city = mysqli_escape_string($db, $_POST['city']);
         $userId = $_SESSION['userId'];
 
 

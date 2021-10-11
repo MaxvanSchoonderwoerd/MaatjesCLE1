@@ -19,10 +19,10 @@ if (!empty($_POST)) {
         if (isset($db)) {
 
             //get the name from the input of the user
-            $email = mysqli_escape_string($db, htmlentities($_POST['loginEmail']));
+            $email = mysqli_escape_string($db, $_POST['loginEmail']);
 
             //get the password from the input of the user
-            $password = mysqli_escape_string($db,htmlentities($_POST['loginPassword']));
+            $password = mysqli_escape_string($db, $_POST['loginPassword']);
 
             //look through the database for the user's inputted "email" and get its corresponding hashed password
 
@@ -67,11 +67,11 @@ if (!empty($_POST)) {
 if (isset($db)) {
     if (!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['email']) && !empty($_POST['tel']) && !empty($_POST['password'])) {
 
-        $firstname = mysqli_escape_string($db, htmlentities($_POST['firstname']));
-        $lastname = mysqli_escape_string($db, htmlentities($_POST['lastname']));
-        $email = mysqli_escape_string($db, htmlentities($_POST['email']));
-        $tel = mysqli_escape_string($db, htmlentities($_POST['tel']));
-        $password = mysqli_escape_string($db, htmlentities($_POST['password']));
+        $firstname = mysqli_escape_string($db, $_POST['firstname']);
+        $lastname = mysqli_escape_string($db, $_POST['lastname']);
+        $email = mysqli_escape_string($db, $_POST['email']);
+        $tel = mysqli_escape_string($db, $_POST['tel']);
+        $password = mysqli_escape_string($db, $_POST['password']);
         $hash = password_hash($password, PASSWORD_DEFAULT);
 
         $sql = "INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `email`, `tel`) VALUES (NULL, '$firstname', '$lastname', '$hash', '$email', '$tel')";

@@ -74,10 +74,10 @@ if ($_SESSION['loggedIn'] == false) {
             ?>
             <h1 class="inputTitle">Verander gegevens</h1>
             <form action="" method="post">
-                <input class="profileInput" type="text" id="firstname" name="firstname" placeholder=<?= $firstName; ?>>
-                <input class="profileInput" type="text" id="lastname" name="lastname" placeholder=<?= $lastName; ?>>
-                <input class="profileInput" type="text" id="email" name="email" placeholder=<?= $email; ?>>
-                <input class="profileInput" type="text" id="tel" name="tel" placeholder=<?= $tel; ?>>
+                <input class="profileInput" type="text" id="firstname" name="firstname" placeholder=<?= htmlentities($firstName); ?>>
+                <input class="profileInput" type="text" id="lastname" name="lastname" placeholder=<?= htmlentities($lastName); ?>>
+                <input class="profileInput" type="text" id="email" name="email" placeholder=<?= htmlentities($email); ?>>
+                <input class="profileInput" type="text" id="tel" name="tel" placeholder=<?= htmlentities($tel); ?>>
                 <button class="profileButton" type="submit">Verander gegevens <i class="fas fa-user-edit"></i></button>
             </form>
         </div>
