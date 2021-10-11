@@ -98,6 +98,9 @@ header {
 }
 
 .infoTitle {
+    padding-top: 1.5rem
+}
+.infoTitle:first-child {
     padding-top: 5rem
 }
 
@@ -105,8 +108,9 @@ header {
     padding-top: 1.5rem
 }
 
-.infoBody:last-of-type {
+.infoList {
     padding: 1.5rem 0 5rem 0;
+    list-style: none;
 }
 
 .infoImg {
@@ -148,6 +152,29 @@ header {
 /*##########################*/
 /*upload button with image*/
 /*##########################*/
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.visible {
+    display: inline;
+    visibility: visible;
+}
+
+.succesSection {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.succesContainer {
+    max-width: 80vw;
+    color: var(--clr_darkGreen);
+}
+
 
 .btnImgSection {
     background-color: var(--clr_primary);

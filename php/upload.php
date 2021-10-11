@@ -14,18 +14,23 @@ if ($_SESSION['loggedIn'] == false) {
     redirect("login.php");
 }
 
+$succes = "hidden";
+
 
 if (isset($db)) {
     if (!empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['city'])) {
 
-        $title = mysqli_escape_string($db,  htmlentities($_POST['title']));
-        $description = mysqli_escape_string($db,  htmlentities($_POST['description']));
+        $title = mysqli_escape_string($db, htmlentities($_POST['title']));
+        $description = mysqli_escape_string($db, htmlentities($_POST['description']));
         $city = mysqli_escape_string($db, htmlentities($_POST['city']));
         $userId = $_SESSION['userId'];
+
 
         $sql = "INSERT INTO `jobs` (`job_id`, `user_id`, `title`, `description`, `city`) VALUES (NULL, '$userId', '$title', '$description', '$city');";
         if (mysqli_query($db, $sql) == false) {
             throw new \Exception();
+        } else {
+            $succes = "visible";
         }
     }
 }
@@ -49,6 +54,11 @@ if (isset($db)) {
                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </section>
+    <section class="succesSection <?=$succes?>">
+        <div class="succesContainer">
+            <h1>Gelukt! Uw klus is geplaatst.</h1>
         </div>
     </section>
     <section class="loginSection">
