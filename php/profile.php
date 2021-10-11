@@ -58,13 +58,26 @@ $warning = "hidden";
 
             //editing user info
             if (!empty($_POST['firstname']) || !empty($_POST['lastname']) || !empty($_POST['email']) || !empty($_POST['tel'])) {
-                $firstName = mysqli_escape_string($db, htmlentities($_POST['firstname']));
-                $lastName = mysqli_escape_string($db, htmlentities($_POST['lastname']));
-                $email = mysqli_escape_string($db, htmlentities($_POST['email']));
-                $tel = mysqli_escape_string($db, htmlentities($_POST['tel']));
+                $newfirstName = mysqli_escape_string($db, htmlentities($_POST['firstname']));
+                if (empty($newfirstName)) {
+                    $newfirstName = $firstName;
+                }
+                $newlastName = mysqli_escape_string($db, htmlentities($_POST['lastname']));
+                if (empty($newlastName)) {
+                    $newfirstName = $lastName;
+                }
+                $newemail = mysqli_escape_string($db, htmlentities($_POST['email']));
+                if (empty($newemail)) {
+                    $newfirstName = $email;
+                }
+                $newtel = mysqli_escape_string($db, htmlentities($_POST['tel']));
+                if (empty($newtel)) {
+                    $newfirstName = $tel;
+                }
 
-                $sql = "UPDATE users SET first_name = '$firstName', last_name = '$lastName', email = '$email', tel = '$tel' WHERE id = '$userId'";
+                $sql = "UPDATE users SET first_name = '$newfirstName', last_name = '$newlastName', email = '$newemail', tel = '$newtel' WHERE id = '$userId'";
                 $result = mysqli_query($db, $sql);
+
             }
 
             ?>
