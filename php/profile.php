@@ -14,7 +14,6 @@ if ($_SESSION['loggedIn'] == false) {
     redirect("index.php");
 }
 
-$warning = "hidden";
 
 ?>
 
@@ -46,7 +45,8 @@ $warning = "hidden";
             $userId = $_SESSION["userId"];
 
             //selecting the row of the user using the user id
-            $userResult = mysqli_query($db, "SELECT * FROM users WHERE id = '$userId'");
+            $query = "SELECT * FROM users WHERE id = '$userId'";
+            $userResult = mysqli_query($db, $query);
 
             //looping through the row setting each variable
             while ($userRow = mysqli_fetch_array($userResult)) {
@@ -54,39 +54,31 @@ $warning = "hidden";
                 $lastName = $userRow['last_name'];
                 $email = $userRow['email'];
                 $tel = $userRow['tel'];
+
             }
+
 
             //editing user info
             if (!empty($_POST['firstname']) || !empty($_POST['lastname']) || !empty($_POST['email']) || !empty($_POST['tel'])) {
-                $newfirstName = mysqli_escape_string($db, htmlentities($_POST['firstname']));
-                if (empty($newfirstName)) {
-                    $newfirstName = $firstName;
-                }
-                $newlastName = mysqli_escape_string($db, htmlentities($_POST['lastname']));
-                if (empty($newlastName)) {
-                    $newfirstName = $lastName;
-                }
-                $newemail = mysqli_escape_string($db, htmlentities($_POST['email']));
-                if (empty($newemail)) {
-                    $newfirstName = $email;
-                }
-                $newtel = mysqli_escape_string($db, htmlentities($_POST['tel']));
-                if (empty($newtel)) {
-                    $newfirstName = $tel;
-                }
+                $firstName = empty($_POST['firstname']) ? $firstName : mysqli_escape_string($db, $_POST['firstname']);
+                $lastName = empty($_POST['lastname']) ? $lastName : mysqli_escape_string($db, $_POST['lastname']);
+                $email = empty($_POST['email']) ? $email : mysqli_escape_string($db, $_POST['email']);
+                $tel = empty($_POST['tel']) ? $tel : mysqli_escape_string($db, $_POST['tel']);
 
-                $sql = "UPDATE users SET first_name = '$newfirstName', last_name = '$newlastName', email = '$newemail', tel = '$newtel' WHERE id = '$userId'";
-                $result = mysqli_query($db, $sql);
+                $sql = "UPDATE users SET first_name = '$firstName', last_name = '$lastName', email = '$email', tel = '$tel' WHERE id = '$userId'";
 
+                if (mysqli_query($db, $sql) == false) {
+                    throw new \Exception();
+                }
             }
 
             ?>
             <h1 class="inputTitle">Verander gegevens</h1>
             <form action="" method="post">
-                <input class="profileInput" type="text" id="firstname" name="firstname" placeholder=<?= $firstName ?>>
-                <input class="profileInput" type="text" id="lastname" name="lastname" placeholder=<?= $lastName ?>>
-                <input class="profileInput" type="text" id="email" name="email" placeholder=<?= $email ?>>
-                <input class="profileInput" type="text" id="tel" name="tel" placeholder=<?= $tel ?>>
+                <input class="profileInput" type="text" id="firstname" name="firstname" placeholder=<?= $firstName; ?>>
+                <input class="profileInput" type="text" id="lastname" name="lastname" placeholder=<?= $lastName; ?>>
+                <input class="profileInput" type="text" id="email" name="email" placeholder=<?= $email; ?>>
+                <input class="profileInput" type="text" id="tel" name="tel" placeholder=<?= $tel; ?>>
                 <button class="profileButton" type="submit">Verander gegevens <i class="fas fa-user-edit"></i></button>
             </form>
         </div>
