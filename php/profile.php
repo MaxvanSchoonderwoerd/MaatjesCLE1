@@ -71,7 +71,6 @@ if ($_SESSION['loggedIn'] == false) {
                     throw new \Exception();
                 }
             }
-
             ?>
             <h1 class="inputTitle">Verander gegevens</h1>
             <form action="" method="post">

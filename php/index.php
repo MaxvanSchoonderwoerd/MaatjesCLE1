@@ -28,8 +28,15 @@ include 'database.php';
     </section>
     <section class="btnImgSection">
         <div class="btnImgContainer">
-            <div class="uploadButtonContainer"><a href="upload.php" class="uploadButton">Upload</a></div>
-            <img class="pictureHome" src="https://source.unsplash.com/random/1920x1080" alt="Maatjes">
+
+            <div class="uploadButtonContainer">
+                <h3 class="uploadButtonTitle">Vraag nu hulp aan meer dan <span class="redText">300.000</span> vrijwilligers</h3>
+                <a href="upload.php" class="uploadButton">Upload</a>
+            </div>
+            <div class="gradient2">
+                <img class="pictureHome" src="../src/helping.jpeg" alt="Helping">
+            </div>
+
         </div>
     </section>
     <section class="jobSection">
