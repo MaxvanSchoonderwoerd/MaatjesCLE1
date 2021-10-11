@@ -376,9 +376,6 @@ header {
     box-shadow: var(--shdw_primary);
 }
 
-.loginContainerMargin {
-    margin: 5rem 0 5rem 0;
-}
 
 .registerContainer {
     padding: 1rem;
@@ -433,7 +430,7 @@ header {
 }
 
 .input {
-    width: 30vw;
+    width: 30rem;
     height: 2rem;
     margin: 0.5rem;
     color: var(--clr_third);
@@ -441,9 +438,9 @@ header {
 }
 
 textarea {
-    max-width: 30vw;
     min-width: 30vw;
     min-height: 10rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .overview {
