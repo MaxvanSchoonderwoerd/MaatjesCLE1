@@ -25,15 +25,15 @@ include 'database.php';
             </p>
             <h2 class="infoTitle">Hoe werkt het?</h2>
             <p class="infoBody">Bent u opzoek naar een maatje? dan kunt u nu gemakkelijk een klusje online zetten. Een
-                vrijwilligers baantje posten gaat alsvolgt:
+                vrijwilligers baantje posten gaat alsvolgt:</p>
             <ul class="infoList">
                 <li>1. Maak een account of login</li>
                 <li>2. Ga naar <a href="upload.php">de upload pagina</a></li>
                 <li>3. Vul een titel, beschrijving en stad in</li>
                 <li>4. Klaar! uw oproep naar een maatje staat online!</li>
-                <br>
-                Bent u vrijwilliger en wilt u reageren op een post? Dan kunt u het telefoon nummer bellen onder de des betreffende post om direct in contact te komen met dat maatje.
             </ul>
+            <p class="infoBody">Bent u vrijwilliger en wilt u reageren op een post? Dan kunt u het telefoon nummer bellen onder de des
+                betreffende post om direct in contact te komen met dat maatje.
             </p>
 
         </div>
@@ -41,15 +41,15 @@ include 'database.php';
     <section class="btnImgSection">
         <div class="btnImgContainer">
 
+            <div class="gradient2">
+                <img class="pictureHome" src="../src/helping.jpeg" alt="Helping">
+            </div>
+
             <div class="uploadButtonContainer">
                 <h3 class="uploadButtonTitle">Ontvang nu hulp van meer dan <span class="redText">300.000</span>
                     vrijwilligers</h3>
                 <a href="upload.php" class="uploadButton">Upload</a>
             </div>
-            <div class="gradient2">
-                <img class="pictureHome" src="../src/helping.jpeg" alt="Helping">
-            </div>
-
         </div>
     </section>
     <section class="jobSection">

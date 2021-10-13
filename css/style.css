@@ -100,16 +100,16 @@ header {
 .infoTitle {
     padding-top: 1.5rem
 }
+
 .infoTitle:first-child {
     padding-top: 5rem
 }
 
 .infoBody {
-    padding-top: 1.5rem
+    padding: 1.5rem 0 1rem 0;
 }
 
 .infoList {
-    padding: 1.5rem 0 5rem 0;
     list-style: none;
 }
 
@@ -185,16 +185,9 @@ header {
 .btnImgContainer {
     position: relative;
     display: grid;
-    padding: 1.5rem 0 1.5rem 0;
-    margin-left: 25%;
     place-items: center;
-    /*grid-template-columns: 1fr 1fr;*/
-    /*grid-template-rows: 1fr;*/
-    /*grid-auto-flow: row;*/
-    /*gap: 0px 0px;*/
-    /*grid-template-areas: "uploadnContainer pictureHome";*/
-    /*max-width: 80vw;*/
-    /* min-height: 50rem; */
+    margin-left: auto;
+    padding: 0 0 1.5rem 0;
 }
 
 .uploadButtonContainer {
@@ -526,8 +519,27 @@ h1 > form {
 /*for screens with a screen size of 600px or lower*/
 
 @media only screen and (max-width: 600px) {
+    .pictureHome {
+        max-width: 100vw;
+    }
+
+
     .uploadButtonContainer {
-        left: -8rem;
+        position: initial;
+        /*left: 10rem;*/
+        /*bottom: -23rem;*/
+    }
+
+    .btnImgContainer{
+        padding-bottom: 0;
+    }
+
+    .jobContainer {
+        margin-top: 0;
+    }
+
+    .gradient2:after {
+        display: none;
     }
 
     .input {
