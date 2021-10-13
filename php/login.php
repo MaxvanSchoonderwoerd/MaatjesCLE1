@@ -11,30 +11,21 @@ function redirect($url, $statusCode = 303)
     die();
 }
 
-//if the post is not empty
 if (!empty($_POST)) {
-    // if the post has the variable "loginEmail" and "loginPassword" set
     if (isset($_POST['loginEmail']) && isset($_POST['loginPassword'])) {
-        //if we are connected to a database
         if (isset($db)) {
 
-            //get the name from the input of the user
             $email = mysqli_escape_string($db, $_POST['loginEmail']);
 
-            //get the password from the input of the user
             $password = mysqli_escape_string($db, $_POST['loginPassword']);
 
-            //look through the database for the user's inputted "email" and get its corresponding hashed password
 
             $sql = "SELECT password FROM users WHERE email = '$email'";
 
 
-            //this is some complicated stuff
             $result = $db->query($sql);
             $hash = $result->fetch_assoc();
 
-            //check if the user's inputted password matches the hashed password from the database
-            //password_verify($password, $hash): $valid;
             $valid = password_verify($password, $hash['password']);
             //if it matches
             if ($valid == true) {
@@ -83,7 +74,6 @@ if (isset($db)) {
         $valid = true;
         if ($valid == true) {
 
-            //start the session
             session_start();
             $_SESSION["loggedIn"] = true;
             $_SESSION["email"] = $email;

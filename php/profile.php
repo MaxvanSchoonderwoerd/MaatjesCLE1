@@ -41,14 +41,11 @@ if ($_SESSION['loggedIn'] == false) {
         <div class="profileContainer">
             <?php
 
-            //storing userId from session in a variable so we can use it in mysqli queries
             $userId = $_SESSION["userId"];
 
-            //selecting the row of the user using the user id
             $query = "SELECT * FROM users WHERE id = '$userId'";
             $userResult = mysqli_query($db, $query);
 
-            //looping through the row setting each variable
             while ($userRow = mysqli_fetch_array($userResult)) {
                 $firstName = $userRow['first_name'];
                 $lastName = $userRow['last_name'];
@@ -58,7 +55,6 @@ if ($_SESSION['loggedIn'] == false) {
             }
 
 
-            //editing user info
             if (!empty($_POST['firstname']) || !empty($_POST['lastname']) || !empty($_POST['email']) || !empty($_POST['tel'])) {
                 $firstName = empty($_POST['firstname']) ? $firstName : mysqli_escape_string($db, $_POST['firstname']);
                 $lastName = empty($_POST['lastname']) ? $lastName : mysqli_escape_string($db, $_POST['lastname']);
@@ -87,7 +83,6 @@ if ($_SESSION['loggedIn'] == false) {
         <div class="jobContainer">
             <?php
 
-            //deleting jobs
             if (isset($_POST['deleteBtn'])) {
                 $_jobId = $_POST['deleteBtn'];
                 $sql = "DELETE FROM jobs WHERE job_id = '$_jobId'";
