@@ -12,7 +12,7 @@
     /*colors*/
 
     --clr_primary: #fdf0d5;
-    --clr_secondary: #669bbc;
+    --clr_secondary: #588dab;
     --clr_third: #003049;
 
     --clr_green: #69bc66;
@@ -39,7 +39,8 @@ html {
     background-color: var(--clr_primary);
     min-height: 100vh;
     font-family: 'Open Sans', sans-serif;
-    background-color: #fdf0d5;
+    letter-spacing: 1px;
+    word-spacing: 2px;
 }
 
 .logo {
