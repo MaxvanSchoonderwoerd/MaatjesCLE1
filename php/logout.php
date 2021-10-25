@@ -11,4 +11,6 @@ if ($_SESSION['loggedIn'] == true) {
     session_unset();
     session_destroy();
     redirect("index.php");
+} else {
+    redirect("index.php");
 }
