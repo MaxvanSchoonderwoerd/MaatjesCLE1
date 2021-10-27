@@ -13,16 +13,16 @@
 
     --clr_primary: #fdf0d5;
     --clr_secondary: #588dab;
-    --clr_third: #003049;
+    --clr_third: #004266;
 
     --clr_green: #69bc66;
-    --clr_darkGreen: #054900;
+    --clr_darkGreen: #076600;
 
     --clr_red: #bc6666;
-    --clr_darkRed: #490000;
+    --clr_darkRed: #660000;
 
-    --clr_purple: #9e66bc;
-    --clr_darkPurple: #470049;
+    --clr_purple: #9a6db1;
+    --clr_darkPurple: #630066;
 
     /*sizes*/
     --txt_xs: 0.75rem;
@@ -140,6 +140,7 @@ header {
     background: linear-gradient(-180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 80%);
 }
 
+
 .gradient2:after {
     content: "";
     position: absolute;
@@ -147,7 +148,7 @@ header {
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(90deg, rgba(253, 240, 213, 1) 0%, rgba(253, 240, 213, 0.2) 40%, rgba(253, 240, 213, 0) 100%);
+    background: linear-gradient(90deg, rgba(88, 141, 171, 1) 0%, rgba(88, 141, 171, 0.2) 40%, rgba(88, 141, 171, 0) 100%);
 }
 
 /*##########################*/
@@ -181,6 +182,7 @@ header {
     background-color: var(--clr_primary);
     display: flex;
     justify-content: center;
+    background-color: var(--clr_secondary);
 }
 
 .btnImgContainer {
@@ -188,7 +190,7 @@ header {
     display: grid;
     place-items: center;
     margin-left: auto;
-    padding: 0 0 1.5rem 0;
+
 }
 
 .uploadButtonContainer {
@@ -202,11 +204,12 @@ header {
     align-items: center;
     max-width: 40vw;
     z-index: 1;
+
 }
 
 .uploadButtonTitle {
     max-width: 20rem;
-    color: var(--clr_third);
+    color: var(--clr_primary);
     font-size: clamp(1rem, 2vw, 2rem);
     margin-bottom: 1rem;
 
@@ -228,6 +231,7 @@ header {
 .pictureHome {
     object-fit: contain;
     max-width: 60vw;
+    vertical-align: bottom;
 }
 
 
@@ -240,6 +244,36 @@ header {
     display: flex;
     justify-content: center;
     width: 100vw;
+}
+
+.jobSectionTitleContainer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+    height: 6rem;
+    background-color: var(--clr_secondary);
+    margin-bottom: 4rem;
+    box-shadow: var(--shdw_primary);
+    z-index: 2;
+}
+
+.jobSectionTitle {
+    color: var(--clr_primary);
+    font-size: clamp(2rem, 3vw, 4rem);
+    position: relative;
+    z-index: 2;
+}
+
+.jobSectionTitleContainer:after {
+    content: "";
+    bottom: -4rem;
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    transform: rotate(45deg);
+    background: linear-gradient(-225deg, rgba(88, 141, 171, 0) 0%, rgba(88, 141, 171, 0) 49%, rgb(65, 105, 128) 50%, var(--clr_secondary) 80%);
+    z-index: -3;
 }
 
 .jobContainer {
@@ -259,11 +293,12 @@ header {
     box-shadow: var(--shdw_secondary);
 }
 
+
 .jobTitle {
     position: relative;
     font-size: 1.5rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 
@@ -531,7 +566,7 @@ h1 > form {
         /*bottom: -23rem;*/
     }
 
-    .btnImgContainer{
+    .btnImgContainer {
         padding-bottom: 0;
     }
 

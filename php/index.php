@@ -32,7 +32,8 @@ include 'database.php';
                 <li>3. Vul een titel, beschrijving en stad in</li>
                 <li>4. Klaar! uw oproep naar een maatje staat online!</li>
             </ul>
-            <p class="infoBody">Bent u vrijwilliger en wilt u reageren op een post? Dan kunt u het telefoon nummer bellen onder de des
+            <p class="infoBody">Bent u vrijwilliger en wilt u reageren op een post? Dan kunt u het telefoon nummer
+                bellen onder de des
                 betreffende post om direct in contact te komen met dat maatje.
             </p>
 
@@ -52,6 +53,9 @@ include 'database.php';
             </div>
         </div>
     </section>
+    <div class="jobSectionTitleContainer">
+        <h2 class="jobSectionTitle">Vind een klus voor jou</h2>
+    </div>
     <section class="jobSection">
         <div class="jobContainer">
             <?php
